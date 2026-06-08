@@ -8,8 +8,6 @@
 
 <body>
 
-<canvas id="flow"></canvas>
-
 <header>
   <div><strong>Winny Engineering</strong></div>
   <nav>
@@ -26,24 +24,38 @@
   <div class="card">
     <h2>Human Powered Aircraft Propeller</h2>
     <p>Optimierung von Effizienz über RPM und Geometrieparameter.</p>
+    <div id="model-container"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin volutpat, risus at suscipit commodo, neque erat congue libero, eget blandit ligula elit ac lacus. Sed euismod, lorem non pulvinar vestibulum, urna arcu porttitor sapien, id maximus ex risus a magna.</p>
   </div>
 
   <div class="card">
     <h2>Moth Hydrofoil Design</h2>
-    <p>VLM-basierte Analyse von Auftrieb und induziertem Widerstand.</p>
-  </div>
-
-  <div class="card">
-    <h2>OpenFOAM CFD Study</h2>
-    <p>Strömungssimulationen mit Fokus auf Konvergenzverhalten.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in eros non orci aliquet bibendum. Quisque sit amet pulvinar augue.</p>
+    <div class="placeholder">
+      <strong>3D-Modell kommt hier später</strong>
+      <p>Hier wird zukünftig ein weiteres interaktives Modell für das Moth Hydrofoil Design platziert.</p>
+    </div>
   </div>
 </div>
 
 <footer>
-  <a href="https://www.linkedin.com/in/winny-hohensee-b015a3213/" target="_blank">
-    LinkedIn
-  </a>
+  <div class="footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="https://www.linkedin.com/in/winny-hohensee-b015a3213/" target="_blank">
+      <img src="linkedin.png" alt="LinkedIn" />
+    </a>
+  </div>
+  <div class="footer-copy">© 2026</div>
 </footer>
 
+<script src="script.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.152.2/build/three.module.js"
+  }
+}
+</script>
+<script type="module" src="model-viewer.js"></script>
 </body>
 </html>

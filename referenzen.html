@@ -2,45 +2,65 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Referenzen</title>
+  <title data-i18n="title-references">Referenzen</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-  <div><strong>Winny Engineering</strong></div>
-  <nav>
-    <a href="index.html">Leistungen</a>
-    <a href="referenzen.html">Referenzen</a>
-    <a href="kontakt.html">Kontakt</a>
-    <a href="impressum.html">Impressum</a>
-  </nav>
+  <div class="brand">
+    <a href="index.html" aria-label="Startseite">
+      <img src="images/coastl_logo_lightblue.png" alt="coastl Logo" class="logo" />
+    </a>
+  </div>
+  <div class="header-actions">
+    <nav>
+      <a href="index.html" data-i18n="nav-services">Leistungen</a>
+      <a href="referenzen.html" data-i18n="nav-references">Referenzen</a>
+      <a href="kontakt.html" data-i18n="nav-contact">Kontakt</a>
+    </nav>
+    <button type="button" id="lang-toggle" aria-label="Sprache umschalten">EN</button>
+  </div>
 </header>
 
-<div class="container">
-  <h1>Referenzen</h1>
+<section class="parallax-hero" style="background-image: url('images/bg1.jpg');">
+  <div class="hero-inner">
+    <h1 data-i18n="references-heading">Referenzen</h1>
 
-  <div class="card">
-    <h2>Human Powered Aircraft Propeller</h2>
-    <p>Optimierung von Effizienz über RPM und Geometrieparameter.</p>
-    <div id="model-container"></div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Proin volutpat, risus at suscipit commodo, neque erat congue libero, eget blandit ligula elit ac lacus. Sed euismod, lorem non pulvinar vestibulum, urna arcu porttitor sapien, id maximus ex risus a magna.</p>
+    <div class="hero-content-card">
+      <div class="hero-grid">
+        <div class="model-col">
+          <div id="model-container"></div>
+        </div>
+
+        <div class="text-col">
+          <h2 data-i18n="references-project-title">Human Powered Aircraft Propeller</h2>
+          <p data-i18n-html="references-project-text-1">Für das Human-Powered-Aircraft-Projekt Odonata wurde ein hocheffizienter Propeller mit einem Durchmesser von 3,5 m und einem Gewicht von 800 g entwickelt. Ziel des Projekts ist es, den aktuellen Langstrecken-Weltrekord für muskelkraftbetriebene Luftfahrzeuge zu brechen. Weitere Informationen zum Projekt sind unter <a href="https://hpa-odonata.de/" target="_blank" rel="noopener">https://hpa-odonata.de/</a> verfügbar.</p>
+          <p data-i18n="references-project-text-2">Die Propellerentwicklung basiert auf einem parametrischen Geometriemodell, das eine systematische Variation der Entwurfsparameter ermöglicht. Die Auslegung und Optimierung erfolgten iterativ mithilfe von JavaProp, CAESES und STAR-CCM+. Dabei wurde JavaProp für schnelle Performanceabschätzungen eingesetzt, CAESES zur Parametrisierung und Optimierung der Geometrie sowie STAR-CCM+ für hochauflösende CFD-Simulationen auf Basis der URANS-Gleichungen.</p>
+          <p data-i18n="references-project-text-3">Im Fokus der Auslegung stehen ein hoher aerodynamischer Wirkungsgrad im relevanten Betriebsbereich, eine robuste Performance über den gesamten Flugzustand sowie die strukturelle Umsetzung bei minimalem Gewicht.</p>
+          <p data-i18n="references-project-text-4">Der Propeller ist ein zentraler Bestandteil des Gesamtsystems und trägt wesentlich zur Gesamtleistung des Odonata-Flugzeugs bei.</p>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 
+<div class="container">
   <div class="card">
-    <h2>Moth Hydrofoil Design</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in eros non orci aliquet bibendum. Quisque sit amet pulvinar augue.</p>
+    <h2 data-i18n="references-card-title">Moth Hydrofoil Design</h2>
+    <p data-i18n="references-card-text">Hier steht ein Entwurfstext für das Hydrofoil-Design. Das Projekt fokussiert sich auf leichte, strukturstabile Flügel und optimierte hydrodynamische Eigenschaften.</p>
     <div class="placeholder">
-      <strong>3D-Modell kommt hier später</strong>
-      <p>Hier wird zukünftig ein weiteres interaktives Modell für das Moth Hydrofoil Design platziert.</p>
+      <strong data-i18n="references-placeholder-title">3D-Modell kommt hier später</strong>
+      <p data-i18n="references-placeholder-text">Hier wird zukünftig ein weiteres interaktives Modell für das Moth Hydrofoil Design platziert.</p>
     </div>
   </div>
 </div>
 
 <footer>
   <div class="footer-links">
-    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html" data-i18n="footer-privacy">Datenschutz</a>
+    <a href="impressum.html" data-i18n="footer-imprint">Impressum</a>
     <a href="https://www.linkedin.com/in/winny-hohensee-b015a3213/" target="_blank">
       <img src="linkedin.png" alt="LinkedIn" />
     </a>

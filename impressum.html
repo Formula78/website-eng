@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Impressum</title>
+  <title data-i18n="title-imprint">Impressum</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,29 +11,44 @@
 <canvas id="flow"></canvas>
 
 <header>
-  <div><strong>Winny Engineering</strong></div>
-  <nav>
-    <a href="index.html">Leistungen</a>
-    <a href="referenzen.html">Referenzen</a>
-    <a href="kontakt.html">Kontakt</a>
-    <a href="impressum.html">Impressum</a>
-  </nav>
+  <div class="brand">
+    <a href="index.html" aria-label="Startseite">
+      <img src="images/coastl_logo_lightblue.png" alt="coastl Logo" class="logo" />
+    </a>
+  </div>
+  <div class="header-actions">
+    <nav>
+      <a href="index.html" data-i18n="nav-services">Leistungen</a>
+      <a href="referenzen.html" data-i18n="nav-references">Referenzen</a>
+      <a href="kontakt.html" data-i18n="nav-contact">Kontakt</a>
+    </nav>
+    <button type="button" id="lang-toggle" aria-label="Sprache umschalten">EN</button>
+  </div>
 </header>
 
+<section class="parallax-hero" style="background-image: url('images/bg1.jpg');">
+  <div class="hero-inner container">
+    <div id="model-container" class="card">
+      <h1 data-i18n="imprint-heading">Impressum</h1>
+      <p data-i18n-html="imprint-responsible"><strong>Verantwortlich für den Inhalt:</strong></p>
+      <p><strong data-i18n="imprint-name-label">Name:</strong> Winny Hohensee</p>
+      <p><strong data-i18n="imprint-email-label">E-Mail:</strong> justinwinnyhohensee@gmail.com</p>
+      <p data-i18n="imprint-description">Diese Website dient der Darstellung von Ingenieurprojekten.</p>
+    </div>
+  </div>
+</section>
+
+<section class="parallax-section" style="background-image: url('images/bg2.jpg');"></section>
+
 <div class="container">
-  <h1>Impressum</h1>
-
-  <p><strong>Name:</strong> Winny Hohensee</p>
-  <p><strong>E-Mail:</strong> justinwinnyhohensee@gmail.com</p>
-
-  <p>
-    Diese Website dient der Darstellung von Ingenieurprojekten.
-  </p>
+  <h2>Weiterführender Text</h2>
+  <p>Hier steht zusätzlicher Inhalt, der beim Scrollen über das zweite Hintergrundbild geht. Ersetze den Text und die Bilder nach Bedarf.</p>
 </div>
 
 <footer>
   <div class="footer-links">
-    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html" data-i18n="footer-privacy">Datenschutz</a>
+    <a href="impressum.html" data-i18n="footer-imprint">Impressum</a>
     <a href="https://www.linkedin.com/in/winny-hohensee-b015a3213/" target="_blank">
       <img src="linkedin.png" alt="LinkedIn" />
     </a>
@@ -41,5 +56,6 @@
   <div class="footer-copy">© 2026</div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>

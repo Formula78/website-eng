@@ -18,12 +18,59 @@ body {
 }
 
 header {
-  background: transparent;
-  padding: 24px 4%;
+  background: rgba(4, 10, 18, 0.85);
+  padding: 20px 4%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+#lang-toggle {
+  border: 1px solid rgba(203, 213, 225, 0.24);
+  background: rgba(255, 255, 255, 0.06);
+  color: #e5e7eb;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#lang-toggle:hover,
+#lang-toggle:focus {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.logo {
+  display: block;
+  height: 48px;
+  width: auto;
+}
+
+/* ensure page content isn't hidden behind fixed header */
+body {
+  padding-top: 80px;
 }
 
 nav a {
@@ -31,11 +78,103 @@ nav a {
   margin: 0 14px;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.2s ease;
 }
 
 nav a:hover,
 nav a:focus {
   color: #9dd7ff;
+}
+
+.page-hero {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 100px 0 60px;
+  background: linear-gradient(180deg, rgba(8,17,29,0.96) 0%, rgba(8,17,29,0.84) 35%, rgba(8,17,29,0.78) 100%),
+              radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 25%),
+              radial-gradient(circle at bottom right, rgba(29, 78, 216, 0.14), transparent 22%);
+}
+
+.hero-content {
+  max-width: min(96vw, 1180px);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero-content h1 {
+  font-size: clamp(3rem, 4.5vw, 4.8rem);
+  line-height: 1.02;
+  letter-spacing: -0.06em;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  max-width: 82ch;
+  color: #dbeafe;
+  font-size: 1.05rem;
+  margin-bottom: 26px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hero-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.hero-actions a.primary {
+  background: #38bdf8;
+  color: #08111d;
+}
+
+.hero-actions a.secondary {
+  background: rgba(203, 213, 225, 0.12);
+  color: #e5e7eb;
+}
+
+.hero-actions a:hover {
+  transform: translateY(-1px);
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #38bdf8;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.feature-card {
+  border-left: 4px solid #38bdf8;
+  padding-left: 20px;
+}
+
+.feature-card h2 {
+  color: #dbeafe;
+}
+
+@media (max-width: 920px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .layout {
@@ -54,10 +193,10 @@ nav a:focus {
 }
 
 .container {
-  max-width: 920px;
+  max-width: min(96vw, 1180px);
   width: 100%;
-  margin: 40px 0;
-  padding: 0 20px;
+  margin: 40px auto;
+  padding: 0 24px;
 }
 
 h1 {
@@ -80,12 +219,12 @@ p {
 
 .card,
 .sample {
-  background: rgba(15, 23, 42, 0.88);
-  border: 1px solid rgba(56, 189, 248, 0.14);
-  box-shadow: 0 18px 80px rgba(0, 0, 0, 0.16);
-  padding: 24px;
-  border-radius: 24px;
-  margin: 20px 0;
+  background: rgba(15, 23, 42, 0.94);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.22);
+  padding: 28px;
+  border-radius: 12px;
+  margin: 24px 0;
 }
 
 .sample {
@@ -103,6 +242,24 @@ footer {
   margin-top: 60px;
   border-top: 1px solid rgba(148, 163, 184, 0.12);
   font-size: 0.95rem;
+}
+
+header {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card,
+.sample {
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.card:hover,
+.feature-card:hover,
+.sample:hover {
+  transform: translateY(-6px);
+  border-color: rgba(56, 189, 248, 0.3);
+  background: rgba(20, 30, 49, 0.98);
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.22);
 }
 
 .footer-links {
@@ -182,4 +339,110 @@ button:hover {
   border-radius: 18px;
   margin-top: 18px;
   color: #cbd5e1;
+}
+
+/* Parallax / hero background sections */
+.parallax-hero,
+.parallax-section {
+  position: relative;
+  min-height: 60vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parallax-hero {
+   position: relative;
+ }
+ 
+ .parallax-hero::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background: rgba(5, 10, 18, 0.48);
+   z-index: 1;
+ }
+ 
+ .parallax-hero .hero-inner {
+   position: relative;
+   z-index: 5; /* bring content above the background */
+   padding: 48px 20px;
+   width: min(92vw, 100%);
+   max-width: 92vw;
+   margin: 0 auto;
+ }
+ 
+ .parallax-section::after {
+   /* subtle overlay to improve text contrast when needed */
+   content: "";
+   position: absolute;
+   inset: 0;
+   background: rgba(6, 8, 12, 0.25);
+   z-index: 2;
+ }
+
+.parallax-hero .container,
+.parallax-hero h1,
+.parallax-hero p {
+  color: #e6f6ff;
+}
+
+/* Ensure model container sits above overlays */
+#model-container {
+  z-index: 10;
+  pointer-events: auto;
+}
+
+@media (max-width: 720px) {
+  .parallax-hero,
+  .parallax-section { background-attachment: scroll; }
+}
+
+/* Two-column layout for hero: model left, text right */
+.hero-grid {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.hero-content-card {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(56, 189, 248, 0.16);
+  border-radius: 24px;
+  box-shadow: 0 18px 80px rgba(0, 0, 0, 0.16);
+  padding: 28px;
+}
+
+.hero-grid .model-col {
+  flex: 0 0 34%;
+  min-width: 280px;
+}
+
+.hero-grid .text-col {
+  flex: 1 1 66%;
+}
+
+.hero-grid .text-col h2,
+.hero-grid .text-col p {
+  color: #e5e7eb;
+}
+
+.hero-grid .model-col #model-container {
+  height: 48vh;
+  max-height: 560px;
+}
+
+@media (max-width: 920px) {
+  .hero-grid { gap: 18px; }
+}
+
+@media (max-width: 720px) {
+  .hero-grid { flex-direction: column-reverse; }
+  .hero-grid .model-col { width: 100%; }
+  .hero-grid .model-col #model-container { height: 40vh; }
 }

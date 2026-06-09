@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Kontakt</title>
+  <title data-i18n="title-contact">Kontakt</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,37 +11,42 @@
 <canvas id="flow"></canvas>
 
 <header>
-  <div><strong>Winny Engineering</strong></div>
-  <nav>
-    <a href="index.html">Leistungen</a>
-    <a href="referenzen.html">Referenzen</a>
-    <a href="kontakt.html">Kontakt</a>
-    <a href="impressum.html">Impressum</a>
-  </nav>
+  <div class="brand">
+    <a href="index.html" aria-label="Startseite">
+      <img src="images/coastl_logo_lightblue.png" alt="coastl Logo" class="logo" />
+    </a>
+  </div>
+  <div class="header-actions">
+    <nav>
+      <a href="index.html" data-i18n="nav-services">Leistungen</a>
+      <a href="referenzen.html" data-i18n="nav-references">Referenzen</a>
+      <a href="kontakt.html" data-i18n="nav-contact">Kontakt</a>
+    </nav>
+    <button type="button" id="lang-toggle" aria-label="Sprache umschalten">EN</button>
+  </div>
 </header>
 
 <div class="container">
-  <h1>Kontakt</h1>
+  <h1 data-i18n="contact-heading">Kontakt</h1>
 
   <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 
-    <input type="email" name="email" placeholder="Deine E-Mail" required>
+    <input type="email" name="email" placeholder="Deine E-Mail" data-i18n-placeholder="contact-email-placeholder" required>
 
-    <textarea name="message" rows="6" placeholder="Deine Nachricht" required></textarea>
+    <textarea name="message" rows="6" placeholder="Deine Nachricht" data-i18n-placeholder="contact-message-placeholder" required></textarea>
 
-    <button type="submit">Senden</button>
+    <button type="submit" data-i18n="contact-submit">Senden</button>
 
   </form>
 
-  <p>
-    oder direkt:  
-    <strong>justinwinnyhohensee@gmail.com</strong>
-  </p>
+  <p data-i18n="contact-or">oder direkt:</p>
+  <p><strong>justinwinnyhohensee@gmail.com</strong></p>
 </div>
 
 <footer>
   <div class="footer-links">
-    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html" data-i18n="footer-privacy">Datenschutz</a>
+    <a href="impressum.html" data-i18n="footer-imprint">Impressum</a>
     <a href="https://www.linkedin.com/in/winny-hohensee-b015a3213/" target="_blank">
       <img src="linkedin.png" alt="LinkedIn" />
     </a>
@@ -49,5 +54,6 @@
   <div class="footer-copy">© 2026</div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>

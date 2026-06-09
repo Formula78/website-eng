@@ -2,107 +2,73 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Leistungen</title>
+  <title data-i18n="title-home">Leistungen</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-  <div><strong>Winny Engineering</strong></div>
-  <nav>
-    <a href="index.html">Leistungen</a>
-    <a href="referenzen.html">Referenzen</a>
-    <a href="kontakt.html">Kontakt</a>
-    <a href="impressum.html">Impressum</a>
-  </nav>
+  <div class="brand">
+    <a href="index.html" aria-label="Startseite">
+      <img src="images/coastl_logo_lightblue.png" alt="coastl Logo" class="logo" />
+    </a>
+  </div>
+  <div class="header-actions">
+    <nav>
+      <a href="index.html" data-i18n="nav-services">Leistungen</a>
+      <a href="referenzen.html" data-i18n="nav-references">Referenzen</a>
+      <a href="kontakt.html" data-i18n="nav-contact">Kontakt</a>
+    </nav>
+    <button type="button" id="lang-toggle" aria-label="Sprache umschalten">EN</button>
+  </div>
 </header>
 
+<section class="page-hero">
+  <div class="hero-content">
+    <p class="eyebrow" data-i18n="hero-eyebrow">INNOVATIVE SYSTEME</p>
+    <h1 data-i18n="hero-heading">Entwicklung effizienter Strömungs- und Leichtbausysteme</h1>
+    <p data-i18n="hero-text">Arbeitsschwerpunkt ist die Entwicklung und Optimierung technischer Systeme im Bereich Aerodynamik, Hydrodynamik und Leichtbau. Im Fokus stehen effiziente Geometrien, belastbare Auslegungen und eine durchgängige Verbindung von Simulation, Konstruktion und Fertigung.</p>
+    <div class="hero-actions">
+      <a class="primary" href="referenzen.html" data-i18n="hero-primary">Referenzen ansehen</a>
+      <a class="secondary" href="kontakt.html" data-i18n="hero-secondary">Kontakt aufnehmen</a>
+    </div>
+  </div>
+</section>
+
 <div class="container">
-  <h1>Leistungen</h1>
+  <div class="feature-grid">
+    <div class="card feature-card">
+      <h2 data-i18n="feature1-heading">Composite-Fertigung und Leichtbau</h2>
+      <p data-i18n="feature1-text">Erfahrung in der Herstellung faserverstärkter Strukturen für hochbelastete, gewichtssensitive Anwendungen. Der Schwerpunkt liegt auf funktionsintegrierten Leichtbaulösungen, die aerodynamische oder strukturelle Anforderungen direkt in die Geometrie übersetzen. Dabei werden sowohl manuelle Fertigungsverfahren als auch prozessnahe Designentscheidungen berücksichtigt.</p>
+    </div>
 
-  <div class="card">
-    <h2>CFD Simulation</h2>
-    <p>OpenFOAM basierte Strömungsanalysen und Konvergenzstudien.</p>
-  </div>
+    <div class="card feature-card">
+      <h2 data-i18n="feature2-heading">Hydrofoil- und Strömungssysteme</h2>
+      <p data-i18n="feature2-text">Entwurf und Optimierung von Hydrofoils und anderen strömungsmechanischen Komponenten für maritime Anwendungen. Ziel ist eine hohe hydrodynamische Effizienz bei gleichzeitig stabilen Betriebseigenschaften über den relevanten Geschwindigkeitsbereich. Die Auslegung erfolgt auf Basis numerischer Simulationen und parametrischer Geometriemodelle.</p>
+    </div>
 
-  <div class="card">
-    <h2>Hydrofoil Design</h2>
-    <p>Optimierung von Foils für Moth-Klasse und marine Anwendungen.</p>
-  </div>
+    <div class="card feature-card">
+      <h2 data-i18n="feature3-heading">Systemoptimierung und Reverse Engineering</h2>
+      <p data-i18n="feature3-text">Analyse bestehender Bauteile und Systeme mittels 3D-Scan-Technologie. Aus den erfassten Geometriedaten werden Abweichungen, Optimierungspotenziale und konstruktive Schwachstellen identifiziert. Dieser Ansatz wird sowohl für die Weiterentwicklung bestehender Designs als auch für die Reproduktion und Verbesserung von Komponenten genutzt.</p>
+    </div>
 
-  <div class="card">
-    <h2>Propellerentwicklung</h2>
-    <p>Human Powered Aircraft Propeller Design mit JavaProp Analyse.</p>
-  </div>
+    <div class="card feature-card">
+      <h2 data-i18n="feature4-heading">Numerische Simulation und parametrische Optimierung</h2>
+      <p data-i18n="feature4-text">Einsatz von CFD-Methoden und automatisierten Optimierungsverfahren zur Verbesserung aerodynamischer und hydrodynamischer Systeme. Kombination aus schnellen Modellansätzen und hochauflösenden Simulationen ermöglicht eine effiziente Exploration des Designraums und eine gezielte Performance-Optimierung.</p>
+    </div>
 
-  <div class="card">
-    <h2>Angebot</h2>
-    <p>Ansonsten biete ich an:</p>
-    <ul>
-      <li>Hydrofoil Entwurf</li>
-      <li>Parametrische Strömungsoptimierung</li>
-      <li>Effiziente Aerodynamik- und Hydrodynamik-Analysen</li>
-    </ul>
-  </div>
-</div>
-  
-  <section class="sample">
-    <h2>Projektübersicht</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet, metus vitae sodales auctor, lacus sapien vestibulum metus, sit amet tristique mauris erat sed felis.</p>
-    <p>Unsere Arbeit umfasst CFD-Simulationen, Hydrofoil-Design und Prototypenbau. In typischen Projekten beginnen wir mit einer Konzeptphase, gefolgt von numerischer Analyse und Validierung.</p>
-    <p>Wir legen Wert auf robuste Konvergenztests und saubere Dokumentation der Ergebnisse, damit die Designentscheidungen nachvollziehbar bleiben.</p>
-  </section>
-
-  <section class="sample">
-    <h2>Methodik</h2>
-    <p>Für Strömungsberechnungen verwenden wir OpenFOAM und validieren wichtige Fälle experimentell. Die Parameterräume werden mit gezielten Studien erkundet, um optimale Formen zu finden.</p>
-    <p>Unsere Workflows integrieren automatisierte Postprocessing-Skripte und Berichts-Templates, sodass Ergebnisse schnell kommuniziert werden können.</p>
-  </section>
-
-  <section class="sample">
-    <h2>Designphasen</h2>
-    <p>Designprozesse beginnen mit Anforderungen und Randbedingungen. Anschließend folgen Vorentwürfe, CFD-Optimierung und Fertigungsprüfung.</p>
-    <p>Wir unterstützen Versionierung und iterative Verfeinerung, um zuverlässige, herstellbare Lösungen zu entwickeln.</p>
-  </section>
-
-  <section class="sample">
-    <h2>Kontakt</h2>
-    <p>Wenn du an einem Projekt interessiert bist, kontaktiere uns über das Formular auf der Kontaktseite. Wir planen gern ein unverbindliches erstes Gespräch.</p>
-  </section>
-
-  <section class="sample">
-    <h2>Technologien</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <p>Wir nutzen Open-source-Toolchains wie OpenFOAM, ParaView und Python-Skripte für automatisiertes Postprocessing.</p>
-  </section>
-
-  <section class="sample">
-    <h2>Fallstudie: Foil-Optimierung</h2>
-    <p>In einer Fallstudie reduzierten wir den Widerstand eines Foils um 12 % durch Geometrieanpassungen und Transition-Control.</p>
-  </section>
-
-  <section class="sample">
-    <h2>Team</h2>
-    <p>Unser Team besteht aus Ingenieuren mit Luftfahrt- und Schiffbau-Hintergrund sowie CFD-Experts zur Validierung.</p>
-  </section>
-
-  <section class="sample">
-    <h2>Blog</h2>
-    <p>In unserem Blog teilen wir Insights zu Simulationstechnik, Mesh-Strategien und Performance-Tuning.</p>
-  </section>
-
-  <section class="sample">
-    <h2>Newsletter</h2>
-    <p>Trage dich ein, um regelmäßig Updates zu erhalten.</p>
-  </section>
-
+    <div class="card feature-card">
+      <h2 data-i18n="feature5-heading">Anwendungen</h2>
+      <p data-i18n="feature5-text">Die beschriebenen Methoden werden in unterschiedlichen technischen Bereichen eingesetzt, darunter Leichtbaukomponenten, Propulsionssysteme, Hydrofoils sowie experimentelle Flug- und Strömungssysteme. Ziel ist stets die Entwicklung funktionaler, effizienter und fertigungsgerechter Lösungen.</p>
+    </div>
   </div>
 </div>
 
 <footer>
   <div class="footer-links">
-    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html" data-i18n="footer-privacy">Datenschutz</a>
+    <a href="impressum.html" data-i18n="footer-imprint">Impressum</a>
     <a href="https://www.linkedin.com/in/winny-hohensee-b015a3213/" target="_blank">
       <img src="linkedin.png" alt="LinkedIn" />
     </a>

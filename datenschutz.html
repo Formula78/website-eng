@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Datenschutz</title>
+  <title data-i18n="title-privacy">Datenschutz</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,35 +11,56 @@
 <canvas id="flow"></canvas>
 
 <header>
-  <div><strong>Winny Engineering</strong></div>
-  <nav>
-    <a href="index.html">Leistungen</a>
-    <a href="referenzen.html">Referenzen</a>
-    <a href="kontakt.html">Kontakt</a>
-    <a href="impressum.html">Impressum</a>
-  </nav>
+  <div class="brand">
+    <a href="index.html" aria-label="Startseite">
+      <img src="images/coastl_logo_lightblue.png" alt="coastl Logo" class="logo" />
+    </a>
+  </div>
+  <div class="header-actions">
+    <nav>
+      <a href="index.html" data-i18n="nav-services">Leistungen</a>
+      <a href="referenzen.html" data-i18n="nav-references">Referenzen</a>
+      <a href="kontakt.html" data-i18n="nav-contact">Kontakt</a>
+    </nav>
+    <button type="button" id="lang-toggle" aria-label="Sprache umschalten">EN</button>
+  </div>
 </header>
 
 <div class="container">
-  <h1>Datenschutz</h1>
+  <h1 data-i18n="privacy-heading">Datenschutz</h1>
 
-  <p>
-    Diese Website verarbeitet personenbezogene Daten ausschließlich zur Kontaktaufnahme.
-  </p>
+  <p data-i18n="privacy-intro">Diese Website verarbeitet personenbezogene Daten nur in dem Umfang, der zur Nutzung der Website und zur Kontaktaufnahme erforderlich ist.</p>
 
-  <p>
-    Beim Absenden des Kontaktformulars werden die eingegebenen Daten (E-Mail und Nachricht)
-    an den Betreiber weitergeleitet und nicht dauerhaft gespeichert.
-  </p>
+  <h2 data-i18n="privacy-responsible-heading">Verantwortlicher</h2>
+  <p data-i18n="privacy-responsible-name">Winny Hohensee</p>
+  <p data-i18n-html="privacy-responsible-email">E-Mail: <a href="mailto:justinwinnyhohensee@gmail.com">justinwinnyhohensee@gmail.com</a></p>
 
-  <p>
-    Es erfolgt kein Tracking und keine Analyse des Nutzerverhaltens.
-  </p>
+  <h2 data-i18n="privacy-general-heading">Allgemeine Hinweise</h2>
+  <p data-i18n="privacy-general-text">Die Nutzung dieser Website ist grundsätzlich ohne Angabe personenbezogener Daten möglich. Soweit auf dieser Website personenbezogene Daten, wie Name, E-Mail-Adresse oder Nachrichtentext, erhoben werden, erfolgt dies stets auf freiwilliger Basis.</p>
+
+  <h2 data-i18n="privacy-server-heading">Server-Log-Dateien</h2>
+  <p data-i18n="privacy-server-text">Der Provider der Website erhebt und speichert automatisch Informationen in Server-Log-Dateien, die Ihr Browser an uns übermittelt. Dazu gehören beispielsweise Browsertyp, Zugriffszeit, IP-Adresse und Referrer-URL. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.</p>
+
+  <h2 data-i18n="privacy-form-heading">Kontaktformular</h2>
+  <p data-i18n="privacy-form-text">Wenn Sie das Kontaktformular nutzen, werden die von Ihnen eingegebenen Daten (E-Mail-Adresse und Nachricht) an Formspree zur Übermittlung an den Websitebetreiber übertragen. Diese Daten werden verwendet, um Ihre Anfrage zu beantworten. Formspree handelt dabei als externer Dienstleister und kann die Daten gemäß seiner Datenschutzerklärung verarbeiten.</p>
+
+  <h2 data-i18n="privacy-external-heading">Externe Links</h2>
+  <p data-i18n="privacy-external-text">Im Footer befindet sich ein Link zu LinkedIn. Es sind keine LinkedIn-Plugins eingebettet; beim Klick auf den Link werden lediglich die LinkedIn-Seite in einem neuen Fenster geöffnet.</p>
+
+  <h2 data-i18n="privacy-cookies-heading">Cookies und Tracking</h2>
+  <p data-i18n="privacy-cookies-text">Auf dieser Website werden keine Tracking-Dienste oder Analysewerkzeuge wie Google Analytics verwendet. Es werden keine Cookies für Auswertung oder Werbung gesetzt. Browserinterne Sitzungsdaten können jedoch technisch notwendig eingesetzt werden.</p>
+
+  <h2 data-i18n="privacy-rights-heading">Ihre Rechte</h2>
+  <p data-i18n="privacy-rights-text">Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie das Recht, der Verarbeitung Ihrer personenbezogenen Daten zu widersprechen. Zur Ausübung dieser Rechte können Sie die oben genannten Kontaktdaten verwenden.</p>
+
+  <h2 data-i18n="privacy-changes-heading">Änderungen dieser Datenschutzerklärung</h2>
+  <p data-i18n="privacy-changes-text">Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen umzusetzen.</p>
 </div>
 
 <footer>
   <div class="footer-links">
-    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html" data-i18n="footer-privacy">Datenschutz</a>
+    <a href="impressum.html" data-i18n="footer-imprint">Impressum</a>
     <a href="https://www.linkedin.com/in/winny-hohensee-b015a3213/" target="_blank">
       <img src="linkedin.png" alt="LinkedIn" />
     </a>
@@ -47,5 +68,6 @@
   <div class="footer-copy">© 2026</div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>

@@ -276,6 +276,16 @@ p { margin: 0 0 1em; max-width: 68ch; color: var(--ink-2); }
 .portrait img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; }
 .portrait figcaption { font-family: var(--mono); font-size: 12px; color: var(--muted); padding: 6px 0; border-bottom: 1px solid var(--rule); }
 
+/* --- Über mich ------------------------------------------------------- */
+.about { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 56px; padding: 48px 0 88px; }
+.about .portrait { position: sticky; top: 88px; align-self: start; }
+@media (max-width: 900px) { .about { grid-template-columns: 1fr; gap: 28px; } .about .portrait { position: static; } }
+.datasheet.cv { position: static; margin: 20px 0 28px; }
+.datasheet.cv dl > div { grid-template-columns: 120px minmax(0, 1fr); }
+.datasheet.cv dd { font-family: var(--sans); font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+.datasheet.cv dd b { color: var(--ink); font-weight: 600; }
+@media (max-width: 560px) { .datasheet.cv dl > div { grid-template-columns: 1fr; } .datasheet.cv dt { border-right: 0; padding-bottom: 0; } }
+
 /* --- Angebot ---------------------------------------------------------- */
 .offers { border-top: 1px solid var(--rule-strong); margin-top: 28px; }
 .offer {
@@ -345,7 +355,7 @@ p { margin: 0 0 1em; max-width: 68ch; color: var(--ink-2); }
 .plate { margin: 0; }
 .plate img { width: 100%; height: auto; aspect-ratio: 21 / 9; max-height: 440px; object-fit: cover; object-position: 50% 42%; }
 .plate.tall img { aspect-ratio: 4 / 3; }
-.plate.plane img { object-position: 50% 88%; }
+.plate.plane img { object-position: 50% 72%; }
 .plate figcaption {
   display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
   font-family: var(--mono); font-size: 12.5px; color: var(--muted);

@@ -1,80 +1,167 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-lang="de">
 <head>
   <meta charset="UTF-8">
-  <title data-i18n="title-references">Referenzen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-en="Work — Odonata propeller · coastl">Referenzen — Propeller Odonata · coastl</title>
+  <meta name="description" content="Referenzprojekt: Propeller mit 3,5 m Durchmesser und 800 g für das Human Powered Aircraft Odonata. Auslegung mit JavaProp, CAESES und STAR-CCM+.">
+  <meta property="og:title" content="Propeller für das HPA Odonata — coastl">
+  <meta property="og:image" content="https://coastl.de/images/bg1.jpg">
+  <meta name="theme-color" content="#f3f1ea" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111416" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="images/coastl_logo_dark.png">
+  <link rel="canonical" href="https://coastl.de/referenzen.html">
+  <script>(function(){var l;try{l=localStorage.getItem("lang")}catch(e){}if(l!=="de"&&l!=="en"){l=/^de\b/i.test(navigator.language||"de")?"de":"en"}document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l})()</script>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<a class="skip" href="#main"><span data-l="de">Zum Inhalt</span><span data-l="en">Skip to content</span></a>
 
-<header>
-  <div class="brand">
-    <a href="index.html" aria-label="Startseite">
-      <img src="images/coastl_logo_lightblue.png" alt="coastl Logo" class="logo" />
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="coastl – Startseite">
+      <img class="logo-light" src="images/coastl_logo_dark.png" alt="" width="30" height="30">
+      <img class="logo-dark" src="images/coastl_logo_lightblue.png" alt="" width="30" height="30">
+      <b>coastl</b>
     </a>
-  </div>
-  <div class="header-actions">
-    <nav>
-      <a href="index.html" data-i18n="nav-services">Leistungen</a>
-      <a href="referenzen.html" data-i18n="nav-references">Referenzen</a>
-      <a href="kontakt.html" data-i18n="nav-contact">Kontakt</a>
+    <nav id="main-nav" class="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html"><span data-l="de">Leistungen</span><span data-l="en">Services</span></a>
+      <a href="referenzen.html" aria-current="page"><span data-l="de">Referenzen</span><span data-l="en">Work</span></a>
+      <a href="kontakt.html"><span data-l="de">Kontakt</span><span data-l="en">Contact</span></a>
     </nav>
-    <button type="button" id="lang-toggle" aria-label="Sprache umschalten">EN</button>
+    <button class="menu-btn" type="button" aria-controls="main-nav" aria-expanded="false"><span data-l="de">Menü</span><span data-l="en">Menu</span></button>
+    <button class="lang" type="button"><span data-x="de">DE</span><span class="sep">/</span><span data-x="en">EN</span></button>
   </div>
 </header>
 
-<section class="parallax-hero" style="background-image: url('images/bg1.jpg');">
-  <div class="hero-inner">
-    <h1 data-i18n="references-heading">Referenzen</h1>
+<main id="main">
+  <div class="wrap">
+    <header class="page-head">
+      <p class="kicker"><span data-l="de">Referenzen</span><span data-l="en">Work</span></p>
+      <h1><span data-l="de">Ausgewählte Projekte</span><span data-l="en">Selected work</span></h1>
+      <p class="lead" data-l="de">Ein ausgewähltes Projekt im Detail. Weitere Arbeiten zeige ich gern im persönlichen Gespräch.</p>
+      <p class="lead" data-l="en">One selected project in detail. I’m happy to walk you through further work in person.</p>
+    </header>
 
-    <div class="hero-content-card">
-      <div class="hero-grid">
-        <div class="model-col">
-          <div id="model-container"></div>
+    <article id="odonata">
+      <div class="case-head">
+        <div>
+          <p class="no"><span data-l="de">Projekt 01</span><span data-l="en">Project 01</span> · Human Powered Aircraft</p>
+          <h2 style="margin-top:8px"><span data-l="de">Propeller für das Muskelkraftflugzeug Odonata</span><span data-l="en">Propeller for the human-powered aircraft Odonata</span></h2>
         </div>
+        <a class="textlink" href="https://hpa-odonata.de/" target="_blank" rel="noopener">hpa-odonata.de ↗</a>
+      </div>
 
-        <div class="text-col">
-          <h2 data-i18n="references-project-title">Human Powered Aircraft Propeller</h2>
-          <p data-i18n-html="references-project-text-1">Für das Human-Powered-Aircraft-Projekt Odonata wurde ein hocheffizienter Propeller mit einem Durchmesser von 3,5 m und einem Gewicht von 800 g entwickelt. Ziel des Projekts ist es, den aktuellen Langstrecken-Weltrekord für muskelkraftbetriebene Luftfahrzeuge zu brechen. Weitere Informationen zum Projekt sind unter <a href="https://hpa-odonata.de/" target="_blank" rel="noopener">https://hpa-odonata.de/</a> verfügbar.</p>
-          <p data-i18n="references-project-text-2">Die Propellerentwicklung basiert auf einem parametrischen Geometriemodell, das eine systematische Variation der Entwurfsparameter ermöglicht. Die Auslegung und Optimierung erfolgten iterativ mithilfe von JavaProp, CAESES und STAR-CCM+. Dabei wurde JavaProp für schnelle Performanceabschätzungen eingesetzt, CAESES zur Parametrisierung und Optimierung der Geometrie sowie STAR-CCM+ für hochauflösende CFD-Simulationen auf Basis der URANS-Gleichungen.</p>
-          <p data-i18n="references-project-text-3">Im Fokus der Auslegung stehen ein hoher aerodynamischer Wirkungsgrad im relevanten Betriebsbereich, eine robuste Performance über den gesamten Flugzustand sowie die strukturelle Umsetzung bei minimalem Gewicht.</p>
-          <p data-i18n="references-project-text-4">Der Propeller ist ein zentraler Bestandteil des Gesamtsystems und trägt wesentlich zur Gesamtleistung des Odonata-Flugzeugs bei.</p>
+      <figure class="plate">
+        <img src="images/bg1.jpg" alt="Das Flugzeug Odonata auf dem Rollfeld, Helfer halten die Tragfläche, rechts der große zweiblättrige Propeller" width="1707" height="1280">
+        <figcaption>
+          <span data-l="de">HPA Odonata mit dem Propeller</span>
+          <span data-l="en">HPA Odonata with the propeller</span>
+          <span>⌀ 3,5 m</span>
+        </figcaption>
+      </figure>
+
+      <div class="case">
+        <aside class="datasheet" aria-label="Datenblatt">
+          <h3><span data-l="de">Datenblatt</span><span data-l="en">Data sheet</span></h3>
+          <dl>
+            <div><dt><span data-l="de">Projekt</span><span data-l="en">Project</span></dt><dd>HPA Odonata</dd></div>
+            <div><dt><span data-l="de">Bauteil</span><span data-l="en">Part</span></dt><dd><span data-l="de">Propeller, 2-blättrig</span><span data-l="en">Propeller, 2 blades</span></dd></div>
+            <div><dt><span data-l="de">Durchmesser</span><span data-l="en">Diameter</span></dt><dd><span data-l="de">3,5 m</span><span data-l="en">3.5 m</span></dd></div>
+            <div><dt><span data-l="de">Masse</span><span data-l="en">Mass</span></dt><dd>800 g</dd></div>
+            <div><dt><span data-l="de">Antrieb</span><span data-l="en">Power</span></dt><dd><span data-l="de">Muskelkraft</span><span data-l="en">Human</span></dd></div>
+            <div><dt><span data-l="de">Auslegung</span><span data-l="en">Design</span></dt><dd>JavaProp</dd></div>
+            <div><dt><span data-l="de">Geometrie</span><span data-l="en">Geometry</span></dt><dd><span data-l="de">CAESES, parametrisch</span><span data-l="en">CAESES, parametric</span></dd></div>
+            <div><dt>CFD</dt><dd>STAR-CCM+, URANS</dd></div>
+            <div><dt><span data-l="de">Ziel</span><span data-l="en">Goal</span></dt><dd><span data-l="de">Langstrecken-Weltrekord</span><span data-l="en">Distance world record</span></dd></div>
+            <div><dt>Web</dt><dd><a href="https://hpa-odonata.de/" target="_blank" rel="noopener">hpa-odonata.de ↗</a></dd></div>
+          </dl>
+        </aside>
+
+        <div class="prose">
+          <h2><span data-l="de">Ausgangslage</span><span data-l="en">Starting point</span></h2>
+          <p data-l="de">Odonata ist ein muskelkraftbetriebenes Flugzeug. Ziel des Teams ist es, den aktuellen Langstrecken-Weltrekord für diese Klasse zu brechen. Der Pilot liefert dauerhaft nur wenige hundert Watt; jede Verlustquelle im Antrieb geht direkt von der erreichbaren Strecke ab. Der Propeller ist deshalb ein zentrales Bauteil des Gesamtsystems.</p>
+          <p data-l="en">Odonata is a human-powered aircraft. The team’s goal is to break the current distance world record in this class. The pilot can only sustain a few hundred watts, so every loss in the drivetrain is taken straight off the achievable distance. That makes the propeller a central part of the whole system.</p>
+
+          <h2><span data-l="de">Vorgehen</span><span data-l="en">Approach</span></h2>
+          <p data-l="de">Die Entwicklung basiert auf einem parametrischen Geometriemodell, mit dem sich die Entwurfsparameter systematisch variieren lassen. Drei Werkzeuge greifen dabei ineinander:</p>
+          <p data-l="en">Development is based on a parametric geometry model that allows the design parameters to be varied systematically. Three tools work together:</p>
+          <ul data-l="de">
+            <li><strong>JavaProp</strong> für schnelle Leistungsabschätzungen und die erste Blattauslegung,</li>
+            <li><strong>CAESES</strong> zur Parametrisierung und Optimierung der Geometrie,</li>
+            <li><strong>STAR-CCM+</strong> für hochaufgelöste CFD-Simulationen auf Basis der URANS-Gleichungen.</li>
+          </ul>
+          <ul data-l="en">
+            <li><strong>JavaProp</strong> for fast performance estimates and the initial blade design,</li>
+            <li><strong>CAESES</strong> for parameterisation and geometry optimisation,</li>
+            <li><strong>STAR-CCM+</strong> for high-resolution CFD simulations based on the URANS equations.</li>
+          </ul>
+          <p data-l="de">Auslegung und Optimierung liefen iterativ: Die schnellen Verfahren grenzen ein, die CFD bestätigt und korrigiert.</p>
+          <p data-l="en">Design and optimisation ran iteratively: the fast methods narrow things down, CFD confirms and corrects.</p>
+
+          <h2><span data-l="de">Ziele der Auslegung</span><span data-l="en">Design targets</span></h2>
+          <ul data-l="de">
+            <li>hoher aerodynamischer Wirkungsgrad im relevanten Betriebsbereich,</li>
+            <li>robuste Leistung über den gesamten Flugzustand,</li>
+            <li>strukturelle Umsetzung bei minimalem Gewicht: 800 g bei 3,5 m Durchmesser.</li>
+          </ul>
+          <ul data-l="en">
+            <li>high aerodynamic efficiency across the relevant operating range,</li>
+            <li>robust performance throughout the flight envelope,</li>
+            <li>a structure at minimum weight: 800 g at 3.5 m diameter.</li>
+          </ul>
+
+          <div class="model-box">
+            <div id="model-container" aria-label="Interaktives 3D-Modell des Propellers"></div>
+            <div class="hud">
+              <span><span data-l="de">Ziehen zum Drehen</span><span data-l="en">Drag to rotate</span></span>
+            </div>
+            <div class="status" id="model-status" aria-live="polite"></div>
+          </div>
+          <p class="mono muted" style="font-size:12.5px">
+            <span data-l="de">Abb. 2 — 3D-Modell des Propellers (vereinfachte Darstellung).</span>
+            <span data-l="en">Fig. 2 — 3D model of the propeller (simplified rendering).</span>
+          </p>
         </div>
       </div>
+    </article>
+
+    <section class="more">
+      <div class="teaser">
+        <div>
+          <h2><span data-l="de">Ein ähnliches Vorhaben?</span><span data-l="en">Working on something similar?</span></h2>
+          <p data-l="de">Ob Propeller, Foil oder Leichtbauteil: Schreiben Sie mir, was Sie vorhaben. Ich sage Ihnen ehrlich, ob und wie ich helfen kann.</p>
+          <p data-l="en">Propeller, foil or lightweight part: tell me what you’re planning. I’ll tell you honestly whether and how I can help.</p>
+        </div>
+        <div class="actions" style="margin-top:0;align-self:center">
+          <a class="btn" href="kontakt.html"><span data-l="de">Anfrage stellen</span><span data-l="en">Get in touch</span> <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn ghost" href="index.html#leistungen"><span data-l="de">Alle Leistungen</span><span data-l="en">All services</span></a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="titleblock">
+  <div class="wrap">
+    <div class="tb">
+      <div class="big">
+        <span class="name">coastl</span>
+        <span><span class="k"><span data-l="de">Inhaber</span><span data-l="en">Owner</span></span><span class="v">Winny Hohensee</span></span>
+      </div>
+      <div><span class="k"><span data-l="de">Kontakt</span><span data-l="en">Contact</span></span><a href="mailto:hohensee@coastl.de">hohensee@coastl.de</a></div>
+      <div><span class="k"><span data-l="de">Blatt</span><span data-l="en">Sheet</span></span><span class="v"><span data-l="de">Referenzen</span><span data-l="en">Work</span></span></div>
+      <div><span class="k"><span data-l="de">Stand</span><span data-l="en">Rev.</span></span><span class="v">© 2026</span></div>
+      <div><span class="k"><span data-l="de">Rechtliches</span><span data-l="en">Legal</span></span><a href="impressum.html"><span data-l="de">Impressum</span><span data-l="en">Legal notice</span></a></div>
+      <div><span class="k">&nbsp;</span><a href="datenschutz.html"><span data-l="de">Datenschutz</span><span data-l="en">Privacy</span></a></div>
+      <div><span class="k"><span data-l="de">Profil</span><span data-l="en">Profile</span></span><a href="https://www.linkedin.com/in/winny-hohensee-b015a3213/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
     </div>
   </div>
-</section>
-
-<div class="container">
-  <div class="card">
-    <h2 data-i18n="references-card-title">Moth Hydrofoil Design</h2>
-    <p data-i18n="references-card-text">Hier steht ein Entwurfstext für das Hydrofoil-Design. Das Projekt fokussiert sich auf leichte, strukturstabile Flügel und optimierte hydrodynamische Eigenschaften.</p>
-    <div class="placeholder">
-      <strong data-i18n="references-placeholder-title">3D-Modell kommt hier später</strong>
-      <p data-i18n="references-placeholder-text">Hier wird zukünftig ein weiteres interaktives Modell für das Moth Hydrofoil Design platziert.</p>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <div class="footer-links">
-    <a href="datenschutz.html" data-i18n="footer-privacy">Datenschutz</a>
-    <a href="impressum.html" data-i18n="footer-imprint">Impressum</a>
-    <a href="https://www.linkedin.com/in/winny-hohensee-b015a3213/" target="_blank">
-      <img src="linkedin.png" alt="LinkedIn" />
-    </a>
-  </div>
-  <div class="footer-copy">© 2026</div>
 </footer>
 
 <script src="script.js"></script>
 <script type="importmap">
-{
-  "imports": {
-    "three": "https://unpkg.com/three@0.152.2/build/three.module.js"
-  }
-}
+{ "imports": { "three": "./vendor/three/build/three.module.min.js" } }
 </script>
 <script type="module" src="model-viewer.js"></script>
 </body>

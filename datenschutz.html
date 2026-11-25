@@ -1,71 +1,231 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-lang="de">
 <head>
   <meta charset="UTF-8">
-  <title data-i18n="title-privacy">Datenschutz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-en="Privacy policy · coastl">Datenschutz · coastl</title>
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#f3f1ea" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111416" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="images/coastl_logo_dark.png">
+  <script>(function(){var l;try{l=localStorage.getItem("lang")}catch(e){}if(l!=="de"&&l!=="en"){l=/^de\b/i.test(navigator.language||"de")?"de":"en"}document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l})()</script>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<a class="skip" href="#main"><span data-l="de">Zum Inhalt</span><span data-l="en">Skip to content</span></a>
 
-<canvas id="flow"></canvas>
-
-<header>
-  <div class="brand">
-    <a href="index.html" aria-label="Startseite">
-      <img src="images/coastl_logo_lightblue.png" alt="coastl Logo" class="logo" />
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="coastl – Startseite">
+      <img class="logo-light" src="images/coastl_logo_dark.png" alt="" width="30" height="30">
+      <img class="logo-dark" src="images/coastl_logo_lightblue.png" alt="" width="30" height="30">
+      <b>coastl</b>
     </a>
-  </div>
-  <div class="header-actions">
-    <nav>
-      <a href="index.html" data-i18n="nav-services">Leistungen</a>
-      <a href="referenzen.html" data-i18n="nav-references">Referenzen</a>
-      <a href="kontakt.html" data-i18n="nav-contact">Kontakt</a>
+    <nav id="main-nav" class="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html"><span data-l="de">Leistungen</span><span data-l="en">Services</span></a>
+      <a href="referenzen.html"><span data-l="de">Referenzen</span><span data-l="en">Work</span></a>
+      <a href="kontakt.html"><span data-l="de">Kontakt</span><span data-l="en">Contact</span></a>
     </nav>
-    <button type="button" id="lang-toggle" aria-label="Sprache umschalten">EN</button>
+    <button class="menu-btn" type="button" aria-controls="main-nav" aria-expanded="false"><span data-l="de">Menü</span><span data-l="en">Menu</span></button>
+    <button class="lang" type="button"><span data-x="de">DE</span><span class="sep">/</span><span data-x="en">EN</span></button>
   </div>
 </header>
 
-<div class="container">
-  <h1 data-i18n="privacy-heading">Datenschutz</h1>
+<main id="main">
+  <div class="wrap">
+    <header class="page-head">
+      <p class="kicker"><span data-l="de">Rechtliches</span><span data-l="en">Legal</span></p>
+      <h1><span data-l="de">Datenschutzerklärung</span><span data-l="en">Privacy policy</span></h1>
+      <p class="lead" data-l="de">Kurz gesagt: Diese Website setzt keine Cookies, verwendet kein Tracking und lädt keine Inhalte von Drittanbietern. Personenbezogene Daten fallen nur beim Hosting und bei einer Kontaktaufnahme per E-Mail an. Die Einzelheiten folgen hier.</p>
+      <p class="lead" data-l="en">In short: this website sets no cookies, uses no tracking and loads no third-party content. Personal data is only processed for hosting and when you contact me by email. Details below. English translation for convenience; the German version is legally binding.</p>
+    </header>
 
-  <p data-i18n="privacy-intro">Diese Website verarbeitet personenbezogene Daten nur in dem Umfang, der zur Nutzung der Website und zur Kontaktaufnahme erforderlich ist.</p>
+    <div class="legal">
+      <nav class="toc" aria-label="Inhalt">
+        <p class="tlabel"><span data-l="de">Inhalt</span><span data-l="en">Contents</span></p>
+        <ol>
+          <li><a href="#verantwortlicher"><span data-l="de">Verantwortlicher</span><span data-l="en">Controller</span></a></li>
+          <li><a href="#hosting"><span data-l="de">Hosting und Server-Logs</span><span data-l="en">Hosting and server logs</span></a></li>
+          <li><a href="#tls"><span data-l="de">Verschlüsselung</span><span data-l="en">Encryption</span></a></li>
+          <li><a href="#email"><span data-l="de">Kontakt per E-Mail</span><span data-l="en">Contact by email</span></a></li>
+          <li><a href="#speicher"><span data-l="de">Lokale Speicherung</span><span data-l="en">Local storage</span></a></li>
+          <li><a href="#extern"><span data-l="de">Keine Drittinhalte</span><span data-l="en">No third-party content</span></a></li>
+          <li><a href="#links"><span data-l="de">Externe Links</span><span data-l="en">External links</span></a></li>
+          <li><a href="#rechte"><span data-l="de">Ihre Rechte</span><span data-l="en">Your rights</span></a></li>
+          <li><a href="#stand"><span data-l="de">Stand</span><span data-l="en">Version</span></a></li>
+        </ol>
+      </nav>
 
-  <h2 data-i18n="privacy-responsible-heading">Verantwortlicher</h2>
-  <p data-i18n="privacy-responsible-name">Winny Hohensee</p>
-  <p data-i18n-html="privacy-responsible-email">E-Mail: <a href="mailto:hohensee@coastl.de">hohensee@coastl.de</a></p>
+      <div class="legal-body">
+        <!-- DEUTSCH -->
+        <div data-l="de">
+          <section id="verantwortlicher">
+            <h2>Verantwortlicher</h2>
+            <p>Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
+            <address>
+              Winny Hohensee · coastl<br>
+              Schönberger Straße 27, 24148 Kiel, Deutschland<br>
+              E-Mail: <a href="mailto:hohensee@coastl.de">hohensee@coastl.de</a>
+            </address>
+            <p>Ein Datenschutzbeauftragter ist nicht bestellt, da hierzu keine gesetzliche Pflicht besteht.</p>
+          </section>
 
-  <h2 data-i18n="privacy-general-heading">Allgemeine Hinweise</h2>
-  <p data-i18n="privacy-general-text">Die Nutzung dieser Website ist grundsätzlich ohne Angabe personenbezogener Daten möglich. Soweit auf dieser Website personenbezogene Daten, wie Name, E-Mail-Adresse oder Nachrichtentext, erhoben werden, erfolgt dies stets auf freiwilliger Basis.</p>
+          <section id="hosting">
+            <h2>Hosting und Server-Logdateien</h2>
+            <p>Diese Website wird über <strong>GitHub Pages</strong> bereitgestellt, einen Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (eine Tochter der Microsoft Corporation).</p>
+            <p>Beim Aufruf der Seiten verarbeitet GitHub technisch notwendige Daten, die Ihr Browser automatisch übermittelt, insbesondere:</p>
+            <ul>
+              <li>IP-Adresse,</li>
+              <li>Datum und Uhrzeit des Zugriffs,</li>
+              <li>aufgerufene Seite bzw. Datei,</li>
+              <li>Referrer-URL (die zuvor besuchte Seite),</li>
+              <li>Browsertyp, Betriebssystem und Gerätetyp.</li>
+            </ul>
+            <p>Die Verarbeitung ist erforderlich, um die Website auszuliefern und ihre Sicherheit und Stabilität zu gewährleisten. Rechtsgrundlage ist mein berechtigtes Interesse an einem sicheren und funktionsfähigen Webauftritt (Art. 6 Abs. 1 lit. f DSGVO). Ich selbst habe keinen Zugriff auf diese Logdateien und führe sie nicht mit anderen Daten zusammen.</p>
+            <p>Dabei können Daten in die USA übermittelt werden. GitHub ist nach dem EU-US Data Privacy Framework zertifiziert; für die Übermittlung besteht damit ein Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO). Weitere Informationen: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Datenschutzerklärung von GitHub</a>.</p>
+          </section>
 
-  <h2 data-i18n="privacy-server-heading">Server-Log-Dateien</h2>
-  <p data-i18n="privacy-server-text">Der Provider der Website erhebt und speichert automatisch Informationen in Server-Log-Dateien, die Ihr Browser an uns übermittelt. Dazu gehören beispielsweise Browsertyp, Zugriffszeit, IP-Adresse und Referrer-URL. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.</p>
+          <section id="tls">
+            <h2>Verschlüsselung</h2>
+            <p>Die Website wird ausschließlich über eine verschlüsselte Verbindung (HTTPS/TLS) ausgeliefert. Sie erkennen das am Schloss-Symbol und an „https://“ in der Adresszeile.</p>
+          </section>
 
-  <h2 data-i18n="privacy-form-heading">Kontaktformular</h2>
-  <p data-i18n="privacy-form-text">Wenn Sie das Kontaktformular nutzen, werden die von Ihnen eingegebenen Daten (E-Mail-Adresse und Nachricht) an Formspree zur Übermittlung an den Websitebetreiber übertragen. Diese Daten werden verwendet, um Ihre Anfrage zu beantworten. Formspree handelt dabei als externer Dienstleister und kann die Daten gemäß seiner Datenschutzerklärung verarbeiten.</p>
+          <section id="email">
+            <h2>Kontaktaufnahme per E-Mail</h2>
+            <p>Wenn Sie mir eine E-Mail schreiben, verarbeite ich Ihre Angaben (z. B. Name, E-Mail-Adresse, Inhalt der Nachricht), um Ihre Anfrage zu bearbeiten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage auf einen Vertrag oder vorvertragliche Maßnahmen zielt, im Übrigen mein berechtigtes Interesse an der Beantwortung von Anfragen (Art. 6 Abs. 1 lit. f DSGVO).</p>
+            <p>Das Anfrageformular auf der Kontaktseite überträgt <strong>keine</strong> Daten über diese Website. Es erzeugt lediglich in Ihrem Browser eine vorbereitete E-Mail und öffnet Ihr eigenes E-Mail-Programm. Ob und wann Sie die Nachricht absenden, entscheiden Sie selbst.</p>
+            <p>Ich lösche Ihre Anfrage, sobald sie erledigt ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen. Kommt ein Auftrag zustande, gelten für geschäftliche Korrespondenz die handels- und steuerrechtlichen Aufbewahrungsfristen von bis zu zehn Jahren (§ 257 HGB, § 147 AO).</p>
+          </section>
 
-  <h2 data-i18n="privacy-external-heading">Externe Links</h2>
-  <p data-i18n="privacy-external-text">Im Footer befindet sich ein Link zu LinkedIn. Es sind keine LinkedIn-Plugins eingebettet; beim Klick auf den Link werden lediglich die LinkedIn-Seite in einem neuen Fenster geöffnet.</p>
+          <section id="speicher">
+            <h2>Lokale Speicherung der Spracheinstellung</h2>
+            <p>Wenn Sie die Sprache umschalten, wird Ihre Wahl („de“ oder „en“) im lokalen Speicher Ihres Browsers (localStorage) abgelegt, damit die Website beim nächsten Seitenaufruf in derselben Sprache erscheint. Diese Information verlässt Ihr Gerät nicht und wird nicht an mich oder Dritte übertragen.</p>
+            <p>Die Speicherung ist für die von Ihnen ausdrücklich gewünschte Funktion unbedingt erforderlich und daher ohne Einwilligung zulässig (§ 25 Abs. 2 Nr. 2 TDDDG). Sie können den Eintrag jederzeit über die Einstellungen Ihres Browsers löschen.</p>
+          </section>
 
-  <h2 data-i18n="privacy-cookies-heading">Cookies und Tracking</h2>
-  <p data-i18n="privacy-cookies-text">Auf dieser Website werden keine Tracking-Dienste oder Analysewerkzeuge wie Google Analytics verwendet. Es werden keine Cookies für Auswertung oder Werbung gesetzt. Browserinterne Sitzungsdaten können jedoch technisch notwendig eingesetzt werden.</p>
+          <section id="extern">
+            <h2>Keine Cookies, kein Tracking, keine Drittinhalte</h2>
+            <p>Diese Website setzt keine Cookies und verwendet keine Analyse- oder Werbedienste. Schriftarten, Skripte (einschließlich der 3D-Bibliothek three.js) und Bilder werden ausschließlich vom eigenen Webspace geladen. Es werden keine Social-Media-Plugins, eingebetteten Videos oder Karten verwendet.</p>
+          </section>
 
-  <h2 data-i18n="privacy-rights-heading">Ihre Rechte</h2>
-  <p data-i18n="privacy-rights-text">Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie das Recht, der Verarbeitung Ihrer personenbezogenen Daten zu widersprechen. Zur Ausübung dieser Rechte können Sie die oben genannten Kontaktdaten verwenden.</p>
+          <section id="links">
+            <h2>Externe Links</h2>
+            <p>Die Website enthält einfache Links, unter anderem zu LinkedIn und zu hpa-odonata.de. Erst wenn Sie einen solchen Link anklicken, verlassen Sie diese Website; ab dann gilt die Datenschutzerklärung des jeweiligen Anbieters. Vorher werden keine Daten an diese Anbieter übertragen.</p>
+          </section>
 
-  <h2 data-i18n="privacy-changes-heading">Änderungen dieser Datenschutzerklärung</h2>
-  <p data-i18n="privacy-changes-text">Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen umzusetzen.</p>
-</div>
+          <section id="rechte">
+            <h2>Ihre Rechte</h2>
+            <p>Sie haben gegenüber dem Verantwortlichen folgende Rechte hinsichtlich Ihrer personenbezogenen Daten:</p>
+            <ul>
+              <li>Auskunft (Art. 15 DSGVO),</li>
+              <li>Berichtigung (Art. 16 DSGVO),</li>
+              <li>Löschung (Art. 17 DSGVO),</li>
+              <li>Einschränkung der Verarbeitung (Art. 18 DSGVO),</li>
+              <li>Datenübertragbarkeit (Art. 20 DSGVO).</li>
+            </ul>
+            <h3>Widerspruchsrecht</h3>
+            <p>Soweit eine Verarbeitung auf Art. 6 Abs. 1 lit. f DSGVO beruht, können Sie ihr aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit widersprechen (Art. 21 DSGVO).</p>
+            <h3>Beschwerderecht</h3>
+            <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO), insbesondere in dem Bundesland Ihres Wohnorts, Ihres Arbeitsplatzes oder des mutmaßlichen Verstoßes.</p>
+            <p>Für alle Anliegen genügt eine formlose E-Mail an <a href="mailto:hohensee@coastl.de">hohensee@coastl.de</a>.</p>
+          </section>
 
-<footer>
-  <div class="footer-links">
-    <a href="datenschutz.html" data-i18n="footer-privacy">Datenschutz</a>
-    <a href="impressum.html" data-i18n="footer-imprint">Impressum</a>
-    <a href="https://www.linkedin.com/in/winny-hohensee-b015a3213/" target="_blank">
-      <img src="linkedin.png" alt="LinkedIn" />
-    </a>
+          <section id="stand">
+            <h2>Stand</h2>
+            <p>Diese Datenschutzerklärung hat den Stand November 2026. Ändern sich die Website oder die rechtlichen Vorgaben, passe ich sie entsprechend an.</p>
+          </section>
+        </div>
+
+        <!-- ENGLISH -->
+        <div data-l="en">
+          <section id="en-verantwortlicher">
+            <h2>Controller</h2>
+            <p>The controller responsible for data processing on this website within the meaning of the General Data Protection Regulation (GDPR) is:</p>
+            <address>
+              Winny Hohensee · coastl<br>
+              Schönberger Straße 27, 24148 Kiel, Germany<br>
+              Email: <a href="mailto:hohensee@coastl.de">hohensee@coastl.de</a>
+            </address>
+            <p>No data protection officer has been appointed, as there is no legal obligation to do so.</p>
+          </section>
+          <section id="en-hosting">
+            <h2>Hosting and server log files</h2>
+            <p>This website is served via <strong>GitHub Pages</strong>, a service of GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (a subsidiary of Microsoft Corporation).</p>
+            <p>When you visit, GitHub processes technically necessary data that your browser transmits automatically, in particular:</p>
+            <ul>
+              <li>IP address,</li>
+              <li>date and time of access,</li>
+              <li>page or file requested,</li>
+              <li>referrer URL,</li>
+              <li>browser type, operating system and device type.</li>
+            </ul>
+            <p>This is required to deliver the website and keep it secure and stable. The legal basis is my legitimate interest in a secure, working website (Art. 6(1)(f) GDPR). I have no access to these log files and do not combine them with other data.</p>
+            <p>Data may be transferred to the USA. GitHub is certified under the EU-US Data Privacy Framework, so the transfer is covered by an adequacy decision of the European Commission (Art. 45 GDPR). More information: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub privacy statement</a>.</p>
+          </section>
+          <section id="en-tls">
+            <h2>Encryption</h2>
+            <p>The website is only delivered over an encrypted connection (HTTPS/TLS).</p>
+          </section>
+          <section id="en-email">
+            <h2>Contact by email</h2>
+            <p>If you email me, I process the information you provide (e.g. name, email address, message content) to handle your request. The legal basis is Art. 6(1)(b) GDPR where your request relates to a contract or pre-contractual steps, otherwise my legitimate interest in answering inquiries (Art. 6(1)(f) GDPR).</p>
+            <p>The inquiry form on the contact page does <strong>not</strong> send any data through this website. It only prepares an email in your browser and opens your own email app. Whether and when you send it is up to you.</p>
+            <p>I delete inquiries once they are dealt with, unless statutory retention obligations apply. If a contract results, business correspondence is subject to German commercial and tax retention periods of up to ten years (§ 257 HGB, § 147 AO).</p>
+          </section>
+          <section id="en-speicher">
+            <h2>Local storage of the language setting</h2>
+            <p>When you switch language, your choice (“de” or “en”) is stored in your browser’s local storage so the site appears in the same language next time. This information never leaves your device and is not sent to me or anyone else.</p>
+            <p>This storage is strictly necessary for a function you explicitly requested and therefore permitted without consent (§ 25(2) no. 2 TDDDG). You can delete it at any time in your browser settings.</p>
+          </section>
+          <section id="en-extern">
+            <h2>No cookies, no tracking, no third-party content</h2>
+            <p>This website sets no cookies and uses no analytics or advertising services. Fonts, scripts (including the 3D library three.js) and images are loaded exclusively from this site’s own web space. No social media plugins, embedded videos or maps are used.</p>
+          </section>
+          <section id="en-links">
+            <h2>External links</h2>
+            <p>The website contains plain links, including to LinkedIn and hpa-odonata.de. Only when you click such a link do you leave this website; from then on the privacy policy of that provider applies. No data is sent to these providers beforehand.</p>
+          </section>
+          <section id="en-rechte">
+            <h2>Your rights</h2>
+            <p>You have the following rights regarding your personal data:</p>
+            <ul>
+              <li>access (Art. 15 GDPR),</li>
+              <li>rectification (Art. 16 GDPR),</li>
+              <li>erasure (Art. 17 GDPR),</li>
+              <li>restriction of processing (Art. 18 GDPR),</li>
+              <li>data portability (Art. 20 GDPR).</li>
+            </ul>
+            <h3>Right to object</h3>
+            <p>Where processing is based on Art. 6(1)(f) GDPR, you may object to it at any time on grounds relating to your particular situation (Art. 21 GDPR).</p>
+            <h3>Right to lodge a complaint</h3>
+            <p>You have the right to lodge a complaint with a data protection supervisory authority (Art. 77 GDPR), in particular in the member state of your residence, place of work or the alleged infringement.</p>
+            <p>A short email to <a href="mailto:hohensee@coastl.de">hohensee@coastl.de</a> is enough for any request.</p>
+          </section>
+          <section id="en-stand">
+            <h2>Version</h2>
+            <p>This privacy policy is as of November 2026. I will update it if the website or the legal requirements change.</p>
+          </section>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="footer-copy">© 2026</div>
+</main>
+
+<footer class="titleblock">
+  <div class="wrap">
+    <div class="tb">
+      <div class="big">
+        <span class="name">coastl</span>
+        <span><span class="k"><span data-l="de">Inhaber</span><span data-l="en">Owner</span></span><span class="v">Winny Hohensee</span></span>
+      </div>
+      <div><span class="k"><span data-l="de">Kontakt</span><span data-l="en">Contact</span></span><a href="mailto:hohensee@coastl.de">hohensee@coastl.de</a></div>
+      <div><span class="k"><span data-l="de">Blatt</span><span data-l="en">Sheet</span></span><span class="v"><span data-l="de">Datenschutz</span><span data-l="en">Privacy</span></span></div>
+      <div><span class="k"><span data-l="de">Stand</span><span data-l="en">Rev.</span></span><span class="v">© 2026</span></div>
+      <div><span class="k"><span data-l="de">Rechtliches</span><span data-l="en">Legal</span></span><a href="impressum.html"><span data-l="de">Impressum</span><span data-l="en">Legal notice</span></a></div>
+      <div><span class="k">&nbsp;</span><a href="datenschutz.html"><span data-l="de">Datenschutz</span><span data-l="en">Privacy</span></a></div>
+      <div><span class="k"><span data-l="de">Profil</span><span data-l="en">Profile</span></span><a href="https://www.linkedin.com/in/winny-hohensee-b015a3213/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+    </div>
+  </div>
 </footer>
 
 <script src="script.js"></script>

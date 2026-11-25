@@ -273,7 +273,7 @@ p { margin: 0 0 1em; max-width: 68ch; color: var(--ink-2); }
 @media (max-width: 560px) { .gallery { grid-template-columns: 1fr; } }
 
 .portrait { margin: 0 0 28px; max-width: 300px; }
-.portrait img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; }
+.portrait img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; }
 .portrait figcaption { font-family: var(--mono); font-size: 12px; color: var(--muted); padding: 6px 0; border-bottom: 1px solid var(--rule); }
 
 /* --- Über mich ------------------------------------------------------- */

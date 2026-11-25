@@ -1,11 +1,20 @@
-// 3D-Ansicht des Odonata-Propellers.
+// 3D-Ansicht der Rechengeometrie: feste Ansicht, nur der Propeller dreht sich um seine Achse.
 // three.js liegt lokal unter /vendor (kein externes CDN).
 import * as THREE from "three";
 import { GLTFLoader } from "./vendor/three/examples/jsm/loaders/GLTFLoader.js";
 
+// Aus Prop.glb ermittelt (Modellkoordinaten): Nabenmitte und Drehachse der Blätter
+const HUB = new THREE.Vector3(-1.138, 1.9648, 1.5055);
+const AXIS = new THREE.Vector3(-0.6428, 0, 0.766).normalize();
+const SPEED = -0.5;            // rad/s, Zeitlupe: etwa eine Umdrehung in 12 s; Vorzeichen = Drehsinn
+// Blickrichtung: schräg von vorne oben (vorne = Flugrichtung = AXIS, Propeller sitzt vor dem Rumpf, oben = +y)
+const VIEW_DIR = new THREE.Vector3().copy(AXIS).multiplyScalar(1.0)
+  .add(new THREE.Vector3(0, 0.35, 0))
+  .add(new THREE.Vector3().crossVectors(new THREE.Vector3(0, 1, 0), AXIS).multiplyScalar(0.9))
+  .normalize();
+
 const container = document.getElementById("model-container");
 const statusEl = document.getElementById("model-status");
-
 if (container) init();
 
 function setStatus(de, en) {
@@ -14,7 +23,9 @@ function setStatus(de, en) {
 }
 
 function init() {
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const dark = window.matchMedia("(prefers-color-scheme: dark)");
+
   const scene = new THREE.Scene();
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
@@ -31,21 +42,14 @@ function init() {
   scene.add(rim);
 
   // Farbe folgt dem Seitenthema: Carbon-Anthrazit auf hellem, helles Grau auf dunklem Grund
-  const dark = window.matchMedia("(prefers-color-scheme: dark)");
   const material = new THREE.MeshStandardMaterial({ metalness: 0.25, roughness: 0.38, side: THREE.DoubleSide });
-  function applyTheme() {
-    material.color.set(dark.matches ? 0xd8d4ca : 0x2a3036);
-    kick();
-  }
+  const applyTheme = () => { material.color.set(dark.matches ? 0xd8d4ca : 0x2a3036); kick(); };
   dark.addEventListener("change", applyTheme);
 
   const pivot = new THREE.Group();
   scene.add(pivot);
 
-  const HOME = { x: -0.32, y: 0.9 };
-  let rotX = HOME.x, rotY = HOME.y, velY = reduce ? 0 : 0.0025;
-  let dragging = false, lastX = 0, lastY = 0, idleSince = performance.now();
-  let visible = true, raf = 0;
+  let rotor = null, angle = 0, last = 0, raf = 0, visible = true;
 
   function resize() {
     const w = container.clientWidth, h = container.clientHeight || 1;
@@ -60,20 +64,23 @@ function init() {
     "Prop.glb",
     (gltf) => {
       const model = gltf.scene;
-      const box = new THREE.Box3().setFromObject(model);
-      const sphere = box.getBoundingSphere(new THREE.Sphere());
-      model.position.sub(sphere.center);
+      model.traverse((o) => { if (o.isMesh) o.material = material; });
+
+      // Blätter in eine eigene Gruppe, deren Ursprung auf der Nabe liegt
+      rotor = new THREE.Group();
+      rotor.position.copy(HUB);
+      const blades = model.children.filter((n) => n.name.startsWith("10_Geometry"));
+      blades.forEach((b) => { b.position.sub(HUB); rotor.add(b); });
+      model.add(rotor);
+
+      // zentrieren und skalieren
+      const sphere = new THREE.Box3().setFromObject(model).getBoundingSphere(new THREE.Sphere());
       const s = 1 / sphere.radius;
       model.scale.setScalar(s);
-      model.position.multiplyScalar(s);
-
-      model.traverse((o) => {
-        if (!o.isMesh) return;
-        o.material = material;
-      });
+      model.position.copy(sphere.center).multiplyScalar(-s);
       pivot.add(model);
-      const dist = 1 / Math.sin((camera.fov * Math.PI) / 360) * 0.98;
-      camera.position.set(0, 0, dist);
+
+      camera.position.copy(VIEW_DIR).multiplyScalar((1 / Math.sin((camera.fov * Math.PI) / 360)) * 0.82);
       camera.lookAt(0, 0, 0);
       setStatus("");
       kick();
@@ -85,39 +92,21 @@ function init() {
     }
   );
 
-  // Ziehen zum Drehen (Maus und Touch, vertikales Scrollen bleibt möglich)
-  const el = renderer.domElement;
-  el.addEventListener("pointerdown", (e) => {
-    dragging = true; lastX = e.clientX; lastY = e.clientY; velY = 0;
-    el.setPointerCapture(e.pointerId);
-  });
-  el.addEventListener("pointermove", (e) => {
-    if (!dragging) return;
-    const dx = e.clientX - lastX, dy = e.clientY - lastY;
-    lastX = e.clientX; lastY = e.clientY;
-    rotY += dx * 0.008;
-    rotX = Math.max(-1.2, Math.min(1.2, rotX + dy * 0.006));
-    velY = dx * 0.0008;
-    kick();
-  });
-  const end = () => { dragging = false; idleSince = performance.now(); };
-  el.addEventListener("pointerup", end);
-  el.addEventListener("pointercancel", end);
-
-  function frame() {
+  function frame(now) {
     raf = 0;
-    if (!dragging) {
-      const idle = performance.now() - idleSince > 2500;
-      const target = reduce ? 0 : 0.0025;
-      velY += ((idle ? target : 0) - velY) * 0.03;
-      rotY += velY;
+    const dt = last ? Math.min((now - last) / 1000, 0.1) : 0;
+    last = now;
+    if (rotor && !reduce.matches) {
+      angle = (angle + SPEED * dt) % (Math.PI * 2);
+      rotor.quaternion.setFromAxisAngle(AXIS, angle);
     }
-    pivot.rotation.set(rotX, rotY, 0);
     renderer.render(scene, camera);
-    if (visible && (!reduce || dragging || Math.abs(velY) > 1e-5)) raf = requestAnimationFrame(frame);
+    if (visible && !reduce.matches) raf = requestAnimationFrame(frame);
+    else last = 0;
   }
   function kick() { if (!raf) raf = requestAnimationFrame(frame); }
 
+  reduce.addEventListener("change", kick);
   applyTheme();
   new ResizeObserver(resize).observe(container);
   if ("IntersectionObserver" in window) {

@@ -24,7 +24,7 @@
 <meta content="#111416" media="(prefers-color-scheme: dark)" name="theme-color"/>
 <link href="/images/coastl_logo_dark.png" rel="icon" type="image/png"/>
 
-<link href="/style.css?v=7" rel="stylesheet"/>
+<link href="/style.css?v=8" rel="stylesheet"/>
 </head>
 <body>
 <a class="skip" href="#main"><span>Skip to content</span></a>
@@ -75,7 +75,9 @@
 <li><span>By when, and with what rough budget?</span></li>
 </ul>
 </div>
-<form class="form" id="inquiry" novalidate="">
+<!-- data-key: Zugangsschlüssel von web3forms.com. Leer = es öffnet sich das E-Mail-Programm. -->
+<form class="form" data-key="78a5e8eb-ebf4-492b-8a4c-ab0a84f53645" id="inquiry" novalidate="">
+<input aria-hidden="true" autocomplete="off" class="hp" name="botcheck" tabindex="-1" type="checkbox"/>
 <div class="row">
 <label class="lbl" for="f-subject"><span>Subject</span></label>
 <input id="f-subject" name="subject" placeholder="What is it about?" type="text"/>
@@ -86,9 +88,14 @@
 <input autocomplete="name" id="f-name" name="name" placeholder="Full name" type="text"/>
 </div>
 <div class="row">
+<label class="lbl" for="f-email"><span>Your email</span></label>
+<input autocomplete="email" id="f-email" name="email" placeholder="so I can reply" required="" type="email"/>
+</div>
+</div>
+<div class="two">
+<div class="row">
 <label class="lbl" for="f-org"><span>Company / project</span></label>
 <input autocomplete="organization" id="f-org" name="org" placeholder="optional" type="text"/>
-</div>
 </div>
 <div class="row">
 <label class="lbl" for="f-when"><span>Timeframe</span></label>
@@ -104,15 +111,16 @@
 <option>not decided yet</option>
 </select>
 </div>
+</div>
 <div class="row">
 <label class="lbl" for="f-msg"><span>Your project</span></label>
 <textarea id="f-msg" name="message" placeholder="What are you planning? A few sentences are enough." required="" rows="7"></textarea>
 </div>
 <div class="form-foot">
-<button class="btn" type="submit"><span>Prepare email</span> <span aria-hidden="true" class="arr">→</span></button>
+<button class="btn" type="submit"><span>Send message</span> <span aria-hidden="true" class="arr">→</span></button>
 <button class="btn ghost" id="copy-inquiry" type="button"><span>Copy text</span></button>
 
-<p class="note">Opens your email app with the message pre-filled. No data is sent through this website.</p>
+<p class="note">Your details are forwarded to me by the service Web3Forms. See the <a href="privacy.html#formular">privacy policy</a>.</p>
 </div>
 <p aria-live="polite" class="form-status" id="form-status" role="status"></p>
 </form>
@@ -135,7 +143,7 @@
 </div>
 </div>
 </footer>
-<script src="/script.js?v=7"></script>
+<script src="/script.js?v=8"></script>
 <!-- Cloudflare Web Analytics --><script data-cf-beacon='{"token": "68081ad18bce4e16bca7c0dffae52b55"}' src="https://static.cloudflareinsights.com/beacon.min.js" type="module"></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

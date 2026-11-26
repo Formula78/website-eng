@@ -1,6 +1,6 @@
 /* coastl — Seitenlogik
    1. Sprache (DE/EN)   2. Mobilmenü   3. E-Mail kopieren
-   4. Anfrageformular (öffnet das eigene E-Mail-Programm)                  */
+   4. Anfrageformular (Versand über Web3Forms, sonst E-Mail-Programm)                  */
 
 (function () {
   "use strict";
@@ -81,42 +81,98 @@
     const status = document.getElementById("form-status");
     let lastText = "";
 
+    const field = (fd, name) => (fd.get(name) || "").toString().trim();
+    const say = (de, en) => { status.textContent = L() === "de" ? de : en; };
+
     function compose() {
       const fd = new FormData(form);
       const de = L() === "de";
-      const topic = (fd.get("subject") || "").toString().trim();
-      const name = (fd.get("name") || "").toString().trim();
-      const org = (fd.get("org") || "").toString().trim();
-      const when = (fd.get("when") || "").toString();
-      const msg = (fd.get("message") || "").toString().trim();
+      const name = field(fd, "name");
+      const email = field(fd, "email");
+      const org = field(fd, "org");
+      const when = field(fd, "when");
+      const msg = field(fd, "message");
 
-      const subject = topic ||
+      const subject = field(fd, "subject") ||
         (de ? "Anfrage" : "Inquiry") + (name ? " – " + name : "");
 
-      const lines = [];
-      lines.push(msg, "", "—");
-      if (name) lines.push((de ? "Name: " : "Name: ") + name);
+      const lines = [msg, "", "—"];
+      if (name) lines.push("Name: " + name);
+      if (email) lines.push("E-Mail: " + email);
       if (org) lines.push((de ? "Unternehmen/Projekt: " : "Company/project: ") + org);
       if (when) lines.push((de ? "Zeitrahmen: " : "Timeframe: ") + when);
-      return { subject, body: lines.join("\n") };
+      return { subject, body: lines.join("\n"), name, email, org, when, msg };
     }
 
-    form.addEventListener("submit", (e) => {
+    async function send(key) {
+      const m = compose();
+      const data = {
+        access_key: key,
+        subject: "coastl.de: " + m.subject,
+        email: m.email,
+        name: m.name,
+        message: m.msg,
+        "Unternehmen/Projekt": m.org,
+        "Zeitrahmen": m.when,
+        "Sprache": L(),
+        botcheck: form.querySelector("input[name=botcheck]").checked
+      };
+      const abort = new AbortController();
+      const timer = setTimeout(() => abort.abort(), 20000);
+      try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(data),
+          signal: abort.signal
+        });
+        const out = await res.json();
+        return res.ok && out.success === true;
+      } catch (e) {
+        return false;
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
+      const key = form.dataset.key;
       const msgEl = form.querySelector("textarea[name=message]");
-      if (!msgEl.value.trim()) {
-        msgEl.focus();
-        status.textContent = L() === "de" ? "Bitte beschreiben Sie kurz Ihr Vorhaben." : "Please describe your project briefly.";
+      const mailEl = form.querySelector("input[name=email]");
+      if (key && (!mailEl.value.trim() || !mailEl.checkValidity())) {
+        mailEl.focus();
+        say("Bitte geben Sie eine gültige E-Mail-Adresse an, damit ich antworten kann.", "Please enter a valid email address so I can reply.");
         return;
       }
-      const { subject, body } = compose();
-      lastText = (L() === "de" ? "An: " : "To: ") + EMAIL + (L() === "de" ? "\nBetreff: " : "\nSubject: ") + subject + "\n\n" + body;
-      window.location.href = "mailto:" + EMAIL +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(body);
-      status.textContent = L() === "de"
-        ? "Ihr E-Mail-Programm sollte sich jetzt mit der fertigen Nachricht öffnen. Falls nicht, kopieren Sie den Text über „Text kopieren“."
-        : "Your email app should now open with the prepared message. If it doesn’t, use “Copy text”.";
+      if (!msgEl.value.trim()) {
+        msgEl.focus();
+        say("Bitte beschreiben Sie kurz Ihr Vorhaben.", "Please describe your project briefly.");
+        return;
+      }
+
+      if (!key) {   // ohne Schlüssel: E-Mail-Programm öffnen
+        const { subject, body } = compose();
+        window.location.href = "mailto:" + EMAIL +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(body);
+        say("Ihr E-Mail-Programm sollte sich jetzt mit der fertigen Nachricht öffnen. Falls nicht, kopieren Sie den Text über „Text kopieren“.",
+            "Your email app should now open with the prepared message. If it doesn’t, use “Copy text”.");
+        return;
+      }
+
+      const button = form.querySelector("button[type=submit]");
+      button.disabled = true;
+      say("Wird gesendet …", "Sending …");
+      const ok = await send(key);
+      button.disabled = false;
+      if (ok) {
+        form.reset();
+        say("Danke, Ihre Nachricht ist angekommen. Ich melde mich bei Ihnen.", "Thank you, your message has been sent. I will get back to you.");
+      } else {
+        say("Das Senden hat nicht geklappt. Ihre Eingaben bleiben erhalten. Bitte versuchen Sie es erneut oder schreiben Sie an " + EMAIL + ".",
+            "Sending failed. Your input is still here. Please try again or write to " + EMAIL + ".");
+      }
     });
 
     const copyAll = document.getElementById("copy-inquiry");

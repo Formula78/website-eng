@@ -24,7 +24,7 @@
 <meta content="#111416" media="(prefers-color-scheme: dark)" name="theme-color"/>
 <link href="/images/coastl_logo_dark.png" rel="icon" type="image/png"/>
 
-<link href="/style.css?v=7" rel="stylesheet"/>
+<link href="/style.css?v=8" rel="stylesheet"/>
 </head>
 <body>
 <a class="skip" href="#main"><span>Zum Inhalt</span></a>
@@ -75,7 +75,9 @@
 <li><span>Bis wann, und mit welchem ungefähren Budget?</span></li>
 </ul>
 </div>
-<form class="form" id="inquiry" novalidate="">
+<!-- data-key: Zugangsschlüssel von web3forms.com. Leer = es öffnet sich das E-Mail-Programm. -->
+<form class="form" data-key="78a5e8eb-ebf4-492b-8a4c-ab0a84f53645" id="inquiry" novalidate="">
+<input aria-hidden="true" autocomplete="off" class="hp" name="botcheck" tabindex="-1" type="checkbox"/>
 <div class="row">
 <label class="lbl" for="f-subject"><span>Betreff</span></label>
 <input id="f-subject" name="subject" placeholder="Worum geht es?" type="text"/>
@@ -86,9 +88,14 @@
 <input autocomplete="name" id="f-name" name="name" placeholder="Vor- und Nachname" type="text"/>
 </div>
 <div class="row">
+<label class="lbl" for="f-email"><span>Ihre E-Mail</span></label>
+<input autocomplete="email" id="f-email" name="email" placeholder="für meine Antwort" required="" type="email"/>
+</div>
+</div>
+<div class="two">
+<div class="row">
 <label class="lbl" for="f-org"><span>Unternehmen / Projekt</span></label>
 <input autocomplete="organization" id="f-org" name="org" placeholder="optional" type="text"/>
-</div>
 </div>
 <div class="row">
 <label class="lbl" for="f-when"><span>Zeitrahmen</span></label>
@@ -104,14 +111,15 @@
 
 </select>
 </div>
+</div>
 <div class="row">
 <label class="lbl" for="f-msg"><span>Ihr Vorhaben</span></label>
 <textarea id="f-msg" name="message" placeholder="Was haben Sie vor? Ein paar Sätze reichen." required="" rows="7"></textarea>
 </div>
 <div class="form-foot">
-<button class="btn" type="submit"><span>E-Mail vorbereiten</span> <span aria-hidden="true" class="arr">→</span></button>
+<button class="btn" type="submit"><span>Nachricht senden</span> <span aria-hidden="true" class="arr">→</span></button>
 <button class="btn ghost" id="copy-inquiry" type="button"><span>Text kopieren</span></button>
-<p class="note">Öffnet Ihr E-Mail-Programm mit fertig ausgefüllter Nachricht. Über diese Website werden keine Daten übertragen.</p>
+<p class="note">Ihre Angaben werden über den Dienst Web3Forms an mich übermittelt. Mehr in der <a href="datenschutz.html#formular">Datenschutzerklärung</a>.</p>
 
 </div>
 <p aria-live="polite" class="form-status" id="form-status" role="status"></p>
@@ -135,7 +143,7 @@
 </div>
 </div>
 </footer>
-<script src="/script.js?v=7"></script>
+<script src="/script.js?v=8"></script>
 <!-- Cloudflare Web Analytics --><script data-cf-beacon='{"token": "68081ad18bce4e16bca7c0dffae52b55"}' src="https://static.cloudflareinsights.com/beacon.min.js" type="module"></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

@@ -17,7 +17,7 @@ from bs4 import BeautifulSoup, Comment
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "_src"
 SITE = "https://coastl.de"
-VERSION = "7"  # bei Änderungen an CSS oder Skripten erhöhen
+VERSION = "8"  # bei Änderungen an CSS oder Skripten erhöhen
 LANGS = ("de", "en")
 OG_DEFAULT = "/images/og-coastl.jpg"
 LINKEDIN = "https://www.linkedin.com/in/winny-hohensee-b015a3213/"

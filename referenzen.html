@@ -127,8 +127,9 @@
           </ul>
 
           <div class="model-box">
-            <div id="model-container" aria-label="3D-Rechengeometrie: Propeller mit Rumpf, ohne Tragflügel"></div>
-            <div class="status" id="model-status" aria-live="polite"></div>
+            <div id="prop-anim" role="img" aria-label="Animation der Rechengeometrie: Propeller dreht sich, mit Rumpf, ohne Tragflügel">
+              <noscript><img src="media/propeller-light-poster.webp" alt="" width="1440" height="900"></noscript>
+            </div>
           </div>
           <p class="mono muted" style="font-size:12.5px">
             <span data-l="de">Abb. 2 — Rechengeometrie aus der Optimierung: Propeller mit Rumpf und Träger, ohne Tragflügel und Leitwerk.</span>
@@ -172,9 +173,6 @@
 </footer>
 
 <script src="script.js"></script>
-<script type="importmap">
-{ "imports": { "three": "./vendor/three/build/three.module.min.js" } }
-</script>
-<script type="module" src="model-viewer.js"></script>
+<script src="prop-video.js" defer></script>
 </body>
 </html>

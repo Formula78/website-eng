@@ -426,17 +426,8 @@ p { margin: 0 0 1em; max-width: 68ch; color: var(--ink-2); }
 .prose li::marker { color: var(--muted); }
 
 .model-box { border-top: 1px solid var(--rule-strong); border-bottom: 1px solid var(--rule); background: transparent; position: relative; margin: 36px 0 8px; }
-#model-container { width: 100%; aspect-ratio: 16 / 10; }
-#model-container canvas { display: block; width: 100% !important; height: 100% !important; }
-.model-box .hud {
-  position: absolute; left: 12px; right: 12px; top: 10px;
-  display: flex; justify-content: space-between; gap: 12px;
-  font-family: var(--mono); font-size: 12px; color: var(--muted); pointer-events: none;
-}
-.model-box .status {
-  position: absolute; inset: 0; display: grid; place-items: center;
-  font-family: var(--mono); font-size: 13px; color: var(--muted); pointer-events: none;
-}
+#prop-anim { width: 100%; aspect-ratio: 16 / 10; }
+#prop-anim img, #prop-anim video { display: block; width: 100%; height: 100%; object-fit: contain; }
 
 .more { padding: 56px 0 80px; border-top: 1px solid var(--rule); }
 

@@ -1,0 +1,23 @@
+# 3D- und CAD-Daten gehören nicht in dieses öffentliche Repository
+*.3dm
+*.3dmbak
+*.glb
+*.glbbak
+*.gltf
+*.stl
+*.step
+*.stp
+*.iges
+*.igs
+*.obj
+*.fbx
+*.3ds
+*.ply
+*.f3d
+*.sldprt
+*.x_t
+
+# lokale Werkzeuge und Sicherungen
+.claude/
+*.bak
+*.bundle

@@ -11,7 +11,7 @@
   /* ---------- 1. Sprache ---------------------------------------------- */
   function applyLang(lang) {
     root.dataset.lang = lang;
-    root.lang = lang;
+    root.lang = lang === "en" ? "en-US" : "de";
     const t = document.querySelector("title");
     if (t) {
       if (!t.dataset.de) t.dataset.de = t.textContent;
@@ -96,21 +96,19 @@
     function compose() {
       const fd = new FormData(form);
       const de = L() === "de";
-      const topics = fd.getAll("topic");
+      const topic = (fd.get("subject") || "").toString().trim();
       const name = (fd.get("name") || "").toString().trim();
       const org = (fd.get("org") || "").toString().trim();
       const when = (fd.get("when") || "").toString();
       const msg = (fd.get("message") || "").toString().trim();
 
-      const subject = (de ? "Anfrage" : "Inquiry") +
-        (topics.length ? ": " + topics.join(", ") : "") +
-        (name ? " – " + name : "");
+      const subject = topic ||
+        (de ? "Anfrage" : "Inquiry") + (name ? " – " + name : "");
 
       const lines = [];
       lines.push(msg, "", "—");
       if (name) lines.push((de ? "Name: " : "Name: ") + name);
       if (org) lines.push((de ? "Unternehmen/Projekt: " : "Company/project: ") + org);
-      if (topics.length) lines.push((de ? "Themen: " : "Topics: ") + topics.join(", "));
       if (when) lines.push((de ? "Zeitrahmen: " : "Timeframe: ") + when);
       return { subject, body: lines.join("\n") };
     }

@@ -35,7 +35,7 @@
 
 <main id="main">
   <div class="wrap">
-    <header class="page-head">
+    <header class="page-head plain">
       <p class="kicker"><span data-l="de">Kontakt</span><span data-l="en">Contact</span></p>
       <h1><span data-l="de">Worum geht es bei Ihnen?</span><span data-l="en">What are you working on?</span></h1>
       <p class="lead" data-l="de">Beschreiben Sie kurz Aufgabe, Randbedingungen und Zeitrahmen. Ich melde mich mit einer ersten Einschätzung, ob und wie ich helfen kann.</p>
@@ -49,10 +49,6 @@
             <span class="lbl">E-Mail</span>
             <a class="mail" href="mailto:hohensee@coastl.de">hohensee@coastl.de</a>
             <button class="copy" type="button" data-copy="hohensee@coastl.de"><span data-l="de">kopieren</span><span data-l="en">copy</span></button>
-          </div>
-          <div>
-            <span class="lbl">LinkedIn</span>
-            <a href="https://www.linkedin.com/in/winny-hohensee-b015a3213/" target="_blank" rel="noopener">Winny Hohensee ↗</a>
           </div>
           <div>
             <span class="lbl"><span data-l="de">Sprachen</span><span data-l="en">Languages</span></span>
@@ -71,18 +67,10 @@
       </div>
 
       <form class="form" id="inquiry" novalidate>
-        <fieldset class="row">
-          <legend><span data-l="de">Thema (mehrere möglich)</span><span data-l="en">Topic (choose any)</span></legend>
-          <div class="chips">
-            <label><input type="checkbox" name="topic" value="Propeller"><span>Propeller</span></label>
-            <label><input type="checkbox" name="topic" value="Hydrofoil"><span>Hydrofoil</span></label>
-            <label><input type="checkbox" name="topic" value="CFD"><span>CFD</span></label>
-            <label><input type="checkbox" name="topic" value="Optimierung"><span><span data-l="de">Optimierung</span><span data-l="en">Optimisation</span></span></label>
-            <label><input type="checkbox" name="topic" value="Prototypenbau"><span><span data-l="de">Prototypenbau</span><span data-l="en">Prototype build</span></span></label>
-            <label><input type="checkbox" name="topic" value="3D-Scan"><span><span data-l="de">3D-Scan</span><span data-l="en">3D scan</span></span></label>
-            <label><input type="checkbox" name="topic" value="Sonstiges"><span><span data-l="de">Sonstiges</span><span data-l="en">Other</span></span></label>
-          </div>
-        </fieldset>
+        <div class="row">
+          <label class="lbl" for="f-subject"><span data-l="de">Betreff</span><span data-l="en">Subject</span></label>
+          <input id="f-subject" type="text" name="subject" data-ph-de="Worum geht es?" data-ph-en="What is it about?">
+        </div>
 
         <div class="two">
           <div class="row">

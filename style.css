@@ -18,8 +18,9 @@
   --figure-bg: #f8f7f2;
 
   --sans: "Segoe UI Variable Text", "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-  --display: "Segoe UI Variable Display", "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-  --mono: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  /* bewusst nur eine Schriftfamilie */
+  --display: var(--sans);
+  --mono: var(--sans);
 
   --gutter: clamp(16px, 4vw, 48px);
   --max: 1240px;
@@ -286,6 +287,21 @@ p { margin: 0 0 1em; max-width: 68ch; color: var(--ink-2); }
 .datasheet.cv dd b { color: var(--ink); font-weight: 600; }
 @media (max-width: 560px) { .datasheet.cv dl > div { grid-template-columns: 1fr; } .datasheet.cv dt { border-right: 0; padding-bottom: 0; } }
 
+.foil-anim { aspect-ratio: 5 / 3; }
+.foil-anim picture { display: contents; }
+/* Die dunkle Fassung hat einen eigenen, fast identischen Grund: Ränder weich ausblenden */
+@media (prefers-color-scheme: dark) {
+  .foil-anim { -webkit-mask-image: radial-gradient(ellipse closest-side, #000 72%, transparent 100%); mask-image: radial-gradient(ellipse closest-side, #000 72%, transparent 100%); }
+}
+.intro .hero-cfd .foil-anim img, .foil-anim video { display: block; width: 100%; height: 100%; max-height: none; aspect-ratio: auto; object-fit: contain; }
+.plate.hero-cfd figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 18px; font-size: 13px; color: var(--muted); }
+.hero-cfd figcaption b { color: var(--ink); font-weight: 600; }
+.hero-cfd .legend { display: flex; align-items: center; gap: 12px; }
+.hero-cfd .legend > span { display: inline-flex; align-items: center; gap: 7px; }
+.hero-cfd .legend i { width: 14px; height: 8px; }
+.hero-cfd .legend .low { background: #1f7fa8; }
+.hero-cfd .legend .high { background: #c4713f; }
+
 /* --- Angebot ---------------------------------------------------------- */
 .offers { border-top: 1px solid var(--rule-strong); margin-top: 28px; }
 .offer {
@@ -390,6 +406,9 @@ p { margin: 0 0 1em; max-width: 68ch; color: var(--ink-2); }
 .page-head { padding: 64px 0 40px; border-bottom: 1px solid var(--rule-strong); }
 .page-head h1 { max-width: 20ch; }
 .page-head .lead { margin-top: 20px; }
+.page-head.plain { border-bottom: 0; padding-bottom: 0; }
+.page-head.plain h1 { max-width: none; }
+.page-head.plain + .contact { padding-top: 40px; }
 
 /* --- Projektseite ------------------------------------------------------ */
 .case-head {
@@ -438,7 +457,7 @@ p { margin: 0 0 1em; max-width: 68ch; color: var(--ink-2); }
 .direct { border-top: 1px solid var(--rule-strong); }
 .direct > div { border-bottom: 1px solid var(--rule); padding: 16px 0; }
 .direct .lbl { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); display: block; margin-bottom: 4px; }
-.direct .mail { font-size: clamp(1.25rem, 1rem + 1vw, 1.7rem); color: var(--ink); text-decoration: none; font-weight: 600; letter-spacing: -0.01em; overflow-wrap: anywhere; }
+.direct .mail { font-size: 17px; color: var(--ink); overflow-wrap: anywhere; }
 .direct .mail:hover { color: var(--accent); }
 .copy {
   font-family: var(--mono); font-size: 12.5px; margin-left: 10px; vertical-align: middle;

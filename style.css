@@ -289,6 +289,7 @@ p { margin: 0 0 1em; max-width: 68ch; color: var(--ink-2); }
 
 .foil-anim { aspect-ratio: 5 / 3; }
 .foil-anim picture { display: contents; }
+.foil-anim.opaque { -webkit-mask-image: radial-gradient(ellipse closest-side, #000 72%, transparent 100%); mask-image: radial-gradient(ellipse closest-side, #000 72%, transparent 100%); }
 /* Die dunkle Fassung hat einen eigenen, fast identischen Grund: Ränder weich ausblenden */
 @media (prefers-color-scheme: dark) {
   .foil-anim { -webkit-mask-image: radial-gradient(ellipse closest-side, #000 72%, transparent 100%); mask-image: radial-gradient(ellipse closest-side, #000 72%, transparent 100%); }

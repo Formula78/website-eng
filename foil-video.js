@@ -4,7 +4,8 @@
   const box = document.getElementById("foil-anim");
   if (!box) return;
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-  // Safari und alle iOS-Browser zeigen WebM ohne Transparenz: dort animiertes WebP.
+  // Safari und alle iOS-Browser zeigen WebM ohne Transparenz: dort MP4 (deckend, Ränder per CSS
+  // ausgeblendet). Animiertes WebP nur als Notlösung, etwa im Stromsparmodus (kein Autoplay).
   const webkit = /^Apple/.test(navigator.vendor || "");
   let visible = true;
   const SPEED = 2 / 3;   // um ein Drittel verlangsamt (animiertes WebP ist entsprechend angepasst)
@@ -12,6 +13,7 @@
   const file = (suffix) => "media/foil-seegang-" + (dark.matches ? "dark" : "light") + suffix;
 
   function image(suffix) {
+    box.classList.remove("opaque");
     const img = document.createElement("img");
     img.src = file(suffix);
     img.alt = "";
@@ -26,7 +28,7 @@
     if (p) p.catch((e) => { if (e.name === "NotAllowedError" || e.name === "NotSupportedError") image("-anim.webp"); });
   }
 
-  function video() {
+  function video(ext) {
     const v = document.createElement("video");
     v.muted = v.defaultMuted = v.loop = v.autoplay = v.playsInline = true;
     v.setAttribute("muted", "");
@@ -39,7 +41,8 @@
     v.addEventListener("error", () => image("-anim.webp"));
     // Standbild erst entfernen, wenn das Video läuft (sonst doppelt, weil transparent)
     v.addEventListener("playing", () => { v.removeAttribute("poster"); }, { once: true });
-    v.src = file(".webm");
+    box.classList.toggle("opaque", ext === ".mp4");
+    v.src = file(ext);
     v.playbackRate = SPEED;
     box.replaceChildren(v);
     play(v);
@@ -47,8 +50,8 @@
 
   function show() {
     if (reduce.matches) image("-poster.webp");
-    else if (webkit || !document.createElement("video").canPlayType('video/webm; codecs="vp9"')) image("-anim.webp");
-    else video();
+    else if (webkit || !document.createElement("video").canPlayType('video/webm; codecs="vp9"')) video(".mp4");
+    else video(".webm");
   }
 
   reduce.addEventListener("change", show);

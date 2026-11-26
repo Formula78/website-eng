@@ -56,9 +56,9 @@ META = {
     },
     "kontakt": {
         "de": ("Projekt anfragen: Strömung, Propeller, Foils | coastl",
-               "Beschreiben Sie kurz Ihr Vorhaben: erste Einschätzung kostenlos, Angebot zum Festpreis. Für Privatkunden und Bootsbauer, Ingenieur aus Kiel."),
+               "Beschreiben Sie kurz Ihr Vorhaben: erste Einschätzung kostenlos, Angebot zum Festpreis. Für private Projekte und Bootsbauer, Ingenieur aus Kiel."),
         "en": ("Start a Project: Flow, Propellers, Foils | coastl",
-               "Briefly describe your project: free first assessment, fixed-price quote. For private clients and boat builders, engineering from Kiel, Germany."),
+               "Briefly describe your project: free first assessment, fixed-price quote. For private projects and boat builders, engineering from Kiel, Germany."),
     },
     "impressum": {"de": ("Impressum | coastl", ""), "en": ("Legal Notice | coastl", "")},
     "datenschutz": {"de": ("Datenschutzerklärung | coastl", ""), "en": ("Privacy Policy | coastl", "")},

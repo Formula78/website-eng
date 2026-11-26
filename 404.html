@@ -6,8 +6,8 @@
   <title data-en="Page not found · coastl">Seite nicht gefunden · coastl</title>
   <meta name="robots" content="noindex">
   <link rel="icon" type="image/png" href="/images/coastl_logo_dark.png">
-  <script>(function(){var l;try{l=localStorage.getItem("lang")}catch(e){}if(l!=="de"&&l!=="en"){l=/^de\b/i.test(navigator.language||"de")?"de":"en"}document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l})()</script>
-  <link rel="stylesheet" href="/style.css?v=5">
+  <script>(function(){var l=location.pathname.indexOf("/en/")===0||!/^de/i.test(navigator.language||"de")?"en":"de";document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l})()</script>
+  <link rel="stylesheet" href="/style.css?v=6">
 </head>
 <body>
 <header class="site-header">
@@ -18,10 +18,10 @@
       <b>coastl</b>
     </a>
     <nav id="main-nav" class="main-nav" aria-label="Hauptnavigation">
-      <a href="/index.html"><span data-l="de">Leistungen</span><span data-l="en">Services</span></a>
-      <a href="/referenzen.html"><span data-l="de">Referenzen</span><span data-l="en">Work</span></a>
-      <a href="/ueber-mich.html"><span data-l="de">Über mich</span><span data-l="en">About</span></a>
-      <a href="/kontakt.html"><span data-l="de">Kontakt</span><span data-l="en">Contact</span></a>
+      <a data-l="de" href="/">Leistungen</a><a data-l="en" href="/en/">Services</a>
+      <a data-l="de" href="/referenzen.html">Referenzen</a><a data-l="en" href="/en/work.html">Work</a>
+      <a data-l="de" href="/ueber-mich.html">Über mich</a><a data-l="en" href="/en/about.html">About</a>
+      <a data-l="de" href="/kontakt.html">Kontakt</a><a data-l="en" href="/en/contact.html">Contact</a>
     </nav>
     <button class="menu-btn" type="button" aria-controls="main-nav" aria-expanded="false"><span data-l="de">Menü</span><span data-l="en">Menu</span></button>
     <button class="lang" type="button"><span data-x="de">DE</span><span class="sep">/</span><span data-x="en">EN</span></button>
@@ -34,11 +34,11 @@
     <p class="lead" style="margin-top:18px" data-l="de">Vielleicht wurde sie verschoben, oder der Link war fehlerhaft.</p>
     <p class="lead" style="margin-top:18px" data-l="en">It may have moved, or the link was broken.</p>
     <div class="actions">
-      <a class="btn" href="/"><span data-l="de">Zur Startseite</span><span data-l="en">Go to home page</span> <span class="arr" aria-hidden="true">→</span></a>
-      <a class="btn ghost" href="/kontakt.html"><span data-l="de">Kontakt</span><span data-l="en">Contact</span></a>
+      <a data-l="de" class="btn" href="/">Zur Startseite <span class="arr" aria-hidden="true">→</span></a><a data-l="en" class="btn" href="/en/">Go to home page <span class="arr" aria-hidden="true">→</span></a>
+      <a data-l="de" class="btn ghost" href="/kontakt.html">Kontakt</a><a data-l="en" class="btn ghost" href="/en/contact.html">Contact</a>
     </div>
   </div>
 </main>
-<script src="/script.js?v=2"></script>
+<script src="/script.js?v=6"></script>
 </body>
 </html>

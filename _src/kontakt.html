@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de" data-lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-en="Contact · coastl">Kontakt · coastl</title>
+  <meta name="description" content="Projektanfrage an coastl – Winny Hohensee. Strömungsauslegung, CFD und Faserverbund-Leichtbau.">
+  <meta name="theme-color" content="#f3f1ea" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111416" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="images/coastl_logo_dark.png">
+  <link rel="canonical" href="https://coastl.de/kontakt.html">
+  <script>(function(){var l;try{l=localStorage.getItem("lang")}catch(e){}if(l!=="de"&&l!=="en"){l=/^de\b/i.test(navigator.language||"de")?"de":"en"}document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l})()</script>
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+<a class="skip" href="#main"><span data-l="de">Zum Inhalt</span><span data-l="en">Skip to content</span></a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="coastl – Startseite">
+      <img class="logo-light" src="images/coastl_logo_dark.png" alt="" width="30" height="30">
+      <img class="logo-dark" src="images/coastl_logo_lightblue.png" alt="" width="30" height="30">
+      <b>coastl</b>
+    </a>
+    <nav id="main-nav" class="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html"><span data-l="de">Leistungen</span><span data-l="en">Services</span></a>
+      <a href="referenzen.html"><span data-l="de">Referenzen</span><span data-l="en">Work</span></a>
+      <a href="ueber-mich.html"><span data-l="de">Über mich</span><span data-l="en">About</span></a>
+      <a href="kontakt.html" aria-current="page"><span data-l="de">Kontakt</span><span data-l="en">Contact</span></a>
+    </nav>
+    <button class="menu-btn" type="button" aria-controls="main-nav" aria-expanded="false"><span data-l="de">Menü</span><span data-l="en">Menu</span></button>
+    <button class="lang" type="button"><span data-x="de">DE</span><span class="sep">/</span><span data-x="en">EN</span></button>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <header class="page-head plain">
+      <p class="kicker"><span data-l="de">Kontakt</span><span data-l="en">Contact</span></p>
+      <h1><span data-l="de">Worum geht es bei Ihnen?</span><span data-l="en">What are you working on?</span></h1>
+      <p class="lead" data-l="de">Beschreiben Sie kurz Aufgabe, Randbedingungen und Zeitrahmen. Ich melde mich mit einer ersten Einschätzung, ob und wie ich helfen kann.</p>
+      <p class="lead" data-l="en">Briefly describe the task, constraints and timeframe. I’ll get back to you with a first assessment of whether and how I can help.</p>
+    </header>
+
+    <div class="contact">
+      <div>
+        <div class="direct">
+          <div>
+            <span class="lbl">E-Mail</span>
+            <a class="mail" href="mailto:hohensee@coastl.de">hohensee@coastl.de</a>
+            <button class="copy" type="button" data-copy="hohensee@coastl.de"><span data-l="de">kopieren</span><span data-l="en">copy</span></button>
+          </div>
+          <div>
+            <span class="lbl"><span data-l="de">Sprachen</span><span data-l="en">Languages</span></span>
+            <span data-l="de">Deutsch, Englisch</span><span data-l="en">German, English</span>
+          </div>
+        </div>
+
+        <h2 style="font-size:1.15rem;margin:40px 0 10px"><span data-l="de">Was bei einer Anfrage hilft</span><span data-l="en">What helps with an inquiry</span></h2>
+        <ul class="tools" style="font-family:var(--sans);font-size:15.5px">
+          <li style="font-family:var(--mono)"><span data-l="de">Checkliste</span><span data-l="en">Checklist</span></li>
+          <li><span data-l="de">Wofür wird das Teil eingesetzt, unter welchen Bedingungen?</span><span data-l="en">What is the part for, and under which conditions?</span></li>
+          <li><span data-l="de">Vorhandene Daten: CAD, Messwerte, Fotos, Zeichnungen</span><span data-l="en">Existing data: CAD, measurements, photos, drawings</span></li>
+          <li><span data-l="de">Wichtigste Zielgröße: Wirkungsgrad, Gewicht, Kosten?</span><span data-l="en">Main target: efficiency, weight, cost?</span></li>
+          <li><span data-l="de">Gewünschter Termin und grober Budgetrahmen</span><span data-l="en">Target date and rough budget</span></li>
+        </ul>
+      </div>
+
+      <form class="form" id="inquiry" novalidate>
+        <div class="row">
+          <label class="lbl" for="f-subject"><span data-l="de">Betreff</span><span data-l="en">Subject</span></label>
+          <input id="f-subject" type="text" name="subject" data-ph-de="Worum geht es?" data-ph-en="What is it about?">
+        </div>
+
+        <div class="two">
+          <div class="row">
+            <label class="lbl" for="f-name">Name</label>
+            <input id="f-name" type="text" name="name" autocomplete="name" data-ph-de="Vor- und Nachname" data-ph-en="Full name">
+          </div>
+          <div class="row">
+            <label class="lbl" for="f-org"><span data-l="de">Unternehmen / Projekt</span><span data-l="en">Company / project</span></label>
+            <input id="f-org" type="text" name="org" autocomplete="organization" data-ph-de="optional" data-ph-en="optional">
+          </div>
+        </div>
+
+        <div class="row">
+          <label class="lbl" for="f-when"><span data-l="de">Zeitrahmen</span><span data-l="en">Timeframe</span></label>
+          <select id="f-when" name="when">
+            <option value="">—</option>
+            <option data-l="de">so bald wie möglich</option>
+            <option data-l="en">as soon as possible</option>
+            <option data-l="de">in 1–3 Monaten</option>
+            <option data-l="en">in 1–3 months</option>
+            <option data-l="de">in mehr als 3 Monaten</option>
+            <option data-l="en">in more than 3 months</option>
+            <option data-l="de">noch offen</option>
+            <option data-l="en">not decided yet</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label class="lbl" for="f-msg"><span data-l="de">Ihr Vorhaben</span><span data-l="en">Your project</span></label>
+          <textarea id="f-msg" name="message" rows="7" required data-ph-de="Worum geht es, was ist das Ziel, was gibt es schon?" data-ph-en="What is it about, what’s the goal, what exists already?"></textarea>
+        </div>
+
+        <div class="form-foot">
+          <button class="btn" type="submit"><span data-l="de">E-Mail vorbereiten</span><span data-l="en">Prepare email</span> <span class="arr" aria-hidden="true">→</span></button>
+          <button class="btn ghost" type="button" id="copy-inquiry"><span data-l="de">Text kopieren</span><span data-l="en">Copy text</span></button>
+          <p class="note" data-l="de">Öffnet Ihr E-Mail-Programm mit fertig ausgefüllter Nachricht. Über diese Website werden keine Daten übertragen.</p>
+          <p class="note" data-l="en">Opens your email app with the message pre-filled. No data is sent through this website.</p>
+        </div>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="titleblock">
+  <div class="wrap">
+    <div class="tb">
+      <div class="big">
+        <span class="name">coastl</span>
+        <span><span class="k"><span data-l="de">Inhaber</span><span data-l="en">Owner</span></span><span class="v">Winny Hohensee, B.Eng.</span></span>
+      </div>
+      <div><span class="k"><span data-l="de">Kontakt</span><span data-l="en">Contact</span></span><a href="mailto:hohensee@coastl.de">hohensee@coastl.de</a></div>
+      <div><span class="k"><span data-l="de">Blatt</span><span data-l="en">Sheet</span></span><span class="v"><span data-l="de">Kontakt</span><span data-l="en">Contact</span></span></div>
+      <div><span class="k"><span data-l="de">Stand</span><span data-l="en">Rev.</span></span><span class="v">© 2026</span></div>
+      <div><span class="k"><span data-l="de">Rechtliches</span><span data-l="en">Legal</span></span><a href="impressum.html"><span data-l="de">Impressum</span><span data-l="en">Legal notice</span></a></div>
+      <div><span class="k">&nbsp;</span><a href="datenschutz.html"><span data-l="de">Datenschutz</span><span data-l="en">Privacy</span></a></div>
+      <div><span class="k"><span data-l="de">Profil</span><span data-l="en">Profile</span></span><a href="https://www.linkedin.com/in/winny-hohensee-b015a3213/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js?v=2"></script>
+</body>
+</html>

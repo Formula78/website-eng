@@ -13,7 +13,7 @@
   let visible = true;
   const SPEED = 2 / 3;   // um ein Drittel verlangsamt (animiertes WebP ist entsprechend angepasst)
   const dark = window.matchMedia("(prefers-color-scheme: dark)");
-  const file = (suffix, theme) => "media/foil-seegang-" + (theme || (dark.matches ? "dark" : "light")) + suffix;
+  const file = (suffix, theme) => "/media/foil-seegang-" + (theme || (dark.matches ? "dark" : "light")) + suffix;
   // Standbild: mit Transparenz immer die helle Fassung, sonst passend zum Farbschema
   const poster = () => file("-poster.webp", alpha ? "light" : "");
 

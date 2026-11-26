@@ -9,7 +9,7 @@
   const webkit = /^Apple/.test(navigator.vendor || "");
   let visible = true;
 
-  const file = (suffix) => "media/propeller-" + (dark.matches ? "dark" : "light") + suffix;
+  const file = (suffix) => "/media/propeller-" + (dark.matches ? "dark" : "light") + suffix;
 
   function image(suffix) {
     const img = document.createElement("img");

@@ -20,16 +20,16 @@
     document.querySelectorAll("[data-ph-de]").forEach((el) => {
       el.placeholder = lang === "en" ? el.dataset.phEn : el.dataset.phDe;
     });
-    document.querySelectorAll(".lang").forEach((b) => {
+    document.querySelectorAll("button.lang").forEach((b) => {
       b.setAttribute("aria-label", lang === "de" ? "Switch to English" : "Auf Deutsch umschalten");
     });
-    try { localStorage.setItem("lang", lang); } catch (e) { /* privat/gesperrt */ }
     document.dispatchEvent(new CustomEvent("langchange", { detail: lang }));
   }
   const L = () => (root.dataset.lang === "en" ? "en" : "de");
 
   applyLang(L());
-  document.querySelectorAll(".lang").forEach((b) =>
+  // Die Sprachseiten verlinken sich gegenseitig; nur die 404-Seite schaltet per Knopf um.
+  document.querySelectorAll("button.lang").forEach((b) =>
     b.addEventListener("click", () => applyLang(L() === "de" ? "en" : "de"))
   );
 
@@ -49,18 +49,6 @@
       }
     });
   }
-
-  // Inhaltsverzeichnis der Rechtstexte: in EN zur englischen Fassung springen
-  document.querySelectorAll(".toc a").forEach((a) => {
-    a.addEventListener("click", (e) => {
-      if (L() !== "en") return;
-      const t = document.getElementById("en-" + a.hash.slice(1));
-      if (!t) return;
-      e.preventDefault();
-      t.scrollIntoView();
-      history.replaceState(null, "", "#" + t.id);
-    });
-  });
 
   /* ---------- 3. Kopieren -------------------------------------------- */
   async function copyText(text) {
@@ -122,7 +110,7 @@
         return;
       }
       const { subject, body } = compose();
-      lastText = "An: " + EMAIL + "\nBetreff: " + subject + "\n\n" + body;
+      lastText = (L() === "de" ? "An: " : "To: ") + EMAIL + (L() === "de" ? "\nBetreff: " : "\nSubject: ") + subject + "\n\n" + body;
       window.location.href = "mailto:" + EMAIL +
         "?subject=" + encodeURIComponent(subject) +
         "&body=" + encodeURIComponent(body);
@@ -135,7 +123,7 @@
     if (copyAll) {
       copyAll.addEventListener("click", async () => {
         const { subject, body } = compose();
-        lastText = "An: " + EMAIL + "\nBetreff: " + subject + "\n\n" + body;
+        lastText = (L() === "de" ? "An: " : "To: ") + EMAIL + (L() === "de" ? "\nBetreff: " : "\nSubject: ") + subject + "\n\n" + body;
         flash(copyAll, await copyText(lastText));
       });
     }

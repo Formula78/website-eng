@@ -127,6 +127,7 @@ html[data-lang="en"] [data-l="de"] { display: none !important; }
   background: none; border: 1px solid var(--rule); color: var(--ink-2);
   padding: 6px 9px; cursor: pointer; border-radius: 0;
 }
+a.lang { text-decoration: none; display: inline-block; line-height: 1.5; }
 .lang:hover { border-color: var(--ink); color: var(--ink); }
 html[data-lang="de"] .lang [data-x="de"],
 html[data-lang="en"] .lang [data-x="en"] { color: var(--ink); font-weight: 700; }

@@ -1,0 +1,5 @@
+# Alle Such- und KI-Crawler dürfen die Seite lesen.
+User-agent: *
+Allow: /
+
+Sitemap: https://coastl.de/sitemap.xml

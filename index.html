@@ -1,263 +1,372 @@
 <!DOCTYPE html>
-<html lang="de" data-lang="de">
+<!-- generiert aus _src/index.html mit _src/build.py -->
+
+<html data-lang="de" lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title data-en="coastl — Flow & lightweight engineering · Winny Hohensee">coastl — Strömung & Leichtbau · Winny Hohensee</title>
-  <meta name="description" content="Auslegung, Strömungsberechnung und Optimierung von Propellern, Hydrofoils und Leichtbaustrukturen. Selbstständige Ingenieurdienstleistung von Winny Hohensee.">
-  <meta property="og:title" content="coastl — Strömung & Leichtbau">
-  <meta property="og:description" content="Propeller, Hydrofoils und Leichtbaustrukturen – berechnet und optimiert.">
-  <meta property="og:image" content="https://coastl.de/images/bg1.jpg">
-  <meta property="og:url" content="https://coastl.de/">
-  <meta name="theme-color" content="#f3f1ea" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#111416" media="(prefers-color-scheme: dark)">
-  <link rel="icon" type="image/png" href="images/coastl_logo_dark.png">
-  <link rel="canonical" href="https://coastl.de/">
-  <script>(function(){var l;try{l=localStorage.getItem("lang")}catch(e){}if(l!=="de"&&l!=="en"){l=/^de\b/i.test(navigator.language||"de")?"de":"en"}document.documentElement.setAttribute("data-lang",l);document.documentElement.lang=l})()</script>
-  <link rel="stylesheet" href="style.css?v=5">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>CFD, Propeller &amp; Hydrofoils: Ingenieur in Kiel | coastl</title>
+  <meta content="Strömungsprobleme berechnen und optimieren: CFD-Simulation, Propeller- und Hydrofoil-Auslegung, 3D-Scan. Aus Kiel, für Privatkunden und Bootsbauer." name="description"/>
+  <link href="https://coastl.de/" rel="canonical"/>
+  <link href="https://coastl.de/" hreflang="de" rel="alternate"/>
+  <link href="https://coastl.de/en/" hreflang="en" rel="alternate"/>
+  <link href="https://coastl.de/en/" hreflang="x-default" rel="alternate"/>
+  <meta content="website" property="og:type"/>
+  <meta content="coastl" property="og:site_name"/>
+  <meta content="CFD, Propeller &amp; Hydrofoils: Ingenieur in Kiel | coastl" property="og:title"/>
+  <meta content="Strömungsprobleme berechnen und optimieren: CFD-Simulation, Propeller- und Hydrofoil-Auslegung, 3D-Scan. Aus Kiel, für Privatkunden und Bootsbauer." property="og:description"/>
+  <meta content="https://coastl.de/" property="og:url"/>
+  <meta content="https://coastl.de/images/og-coastl.jpg" property="og:image"/>
+  <meta content="de_DE" property="og:locale"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "ProfessionalService",
+   "@id": "https://coastl.de/#coastl",
+   "name": "coastl",
+   "url": "https://coastl.de/",
+   "description": "Strömungsprobleme berechnen und optimieren: CFD-Simulation, Propeller- und Hydrofoil-Auslegung, 3D-Scan. Aus Kiel, für Privatkunden und Bootsbauer.",
+   "email": "hohensee@coastl.de",
+   "image": "https://coastl.de/images/og-coastl.jpg",
+   "logo": "https://coastl.de/images/coastl_logo_dark.png",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kiel",
+    "addressRegion": "Schleswig-Holstein",
+    "addressCountry": "DE"
+   },
+   "areaServed": [
+    {
+     "@type": "Country",
+     "name": "Germany"
+    },
+    {
+     "@type": "Place",
+     "name": "Europe"
+    }
+   ],
+   "knowsLanguage": [
+    "de",
+    "en"
+   ],
+   "knowsAbout": [
+    "Strömungssimulation",
+    "CFD",
+    "Aerodynamik",
+    "Hydrodynamik",
+    "Propeller",
+    "Hydrofoil",
+    "Faserverbund-Leichtbau"
+   ],
+   "founder": {
+    "@id": "https://coastl.de/#winny-hohensee"
+   },
+   "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Leistungen",
+    "itemListElement": [
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Propeller-Auslegung",
+       "description": "Auslegung und Optimierung von Propellern mit Blattelementtheorie und CFD."
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Hydrofoil- und Finnenauslegung",
+       "description": "Foils, Finnen und Ruder für Wassersport und maritime Anwendungen."
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "CFD-Studien und Optimierung",
+       "description": "Strömungssimulation, Variantenvergleich und Optimierung."
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "3D-Scan und Reverse Engineering",
+       "description": "Bauteile scannen, als CAD-Modell nachbilden und verbessern."
+      }
+     }
+    ]
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://coastl.de/#winny-hohensee",
+   "name": "Winny Hohensee",
+   "honorificSuffix": "B.Eng.",
+   "jobTitle": "Schiffbauingenieur",
+   "url": "https://coastl.de/ueber-mich.html",
+   "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Fachhochschule Kiel"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/in/winny-hohensee-b015a3213/"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://coastl.de/#website",
+   "url": "https://coastl.de/",
+   "name": "coastl",
+   "inLanguage": [
+    "de",
+    "en"
+   ],
+   "publisher": {
+    "@id": "https://coastl.de/#coastl"
+   }
+  }
+ ]
+}</script>
+
+<meta content="#f3f1ea" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#111416" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<link href="/images/coastl_logo_dark.png" rel="icon" type="image/png"/>
+
+<link href="/style.css?v=6" rel="stylesheet"/>
 </head>
 <body>
-<a class="skip" href="#main"><span data-l="de">Zum Inhalt</span><span data-l="en">Skip to content</span></a>
-
+<a class="skip" href="#main"><span>Zum Inhalt</span></a>
 <header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="index.html" aria-label="coastl – Startseite">
-      <img class="logo-light" src="images/coastl_logo_dark.png" alt="" width="30" height="30">
-      <img class="logo-dark" src="images/coastl_logo_lightblue.png" alt="" width="30" height="30">
-      <b>coastl</b>
-    </a>
-    <nav id="main-nav" class="main-nav" aria-label="Hauptnavigation">
-      <a href="index.html" aria-current="page"><span data-l="de">Leistungen</span><span data-l="en">Services</span></a>
-      <a href="referenzen.html"><span data-l="de">Referenzen</span><span data-l="en">Work</span></a>
-      <a href="ueber-mich.html"><span data-l="de">Über mich</span><span data-l="en">About</span></a>
-      <a href="kontakt.html"><span data-l="de">Kontakt</span><span data-l="en">Contact</span></a>
-    </nav>
-    <button class="menu-btn" type="button" aria-controls="main-nav" aria-expanded="false"><span data-l="de">Menü</span><span data-l="en">Menu</span></button>
-    <button class="lang" type="button"><span data-x="de">DE</span><span class="sep">/</span><span data-x="en">EN</span></button>
-  </div>
+<div class="header-inner">
+<a aria-label="coastl – Startseite" class="brand" href="./">
+<img alt="" class="logo-light" height="30" src="/images/coastl_logo_dark.png" width="30"/>
+<img alt="" class="logo-dark" height="30" src="/images/coastl_logo_lightblue.png" width="30"/>
+<b>coastl</b>
+</a>
+<nav aria-label="Hauptnavigation" class="main-nav" id="main-nav">
+<a aria-current="page" href="./"><span>Leistungen</span></a>
+<a href="referenzen.html"><span>Referenzen</span></a>
+<a href="ueber-mich.html"><span>Über mich</span></a>
+<a href="kontakt.html"><span>Kontakt</span></a>
+</nav>
+<button aria-controls="main-nav" aria-expanded="false" class="menu-btn" type="button"><span>Menü</span></button>
+<a aria-label="English version" class="lang" href="/en/" hreflang="en"><span data-x="de">DE</span><span class="sep">/</span><span data-x="en">EN</span></a>
+</div>
 </header>
-
 <main id="main">
-  <div class="wrap">
+<div class="wrap">
+<section class="intro">
+<div>
+<p class="kicker">coastl · Winny Hohensee, B.Eng.</p>
+<h1>
+<span>Propeller, Hydrofoils und Leichtbau­strukturen. Berechnet und optimiert.</span>
 
-    <section class="intro">
-      <div>
-        <p class="kicker">coastl · Winny Hohensee, B.Eng.</p>
-        <h1>
-          <span data-l="de">Propeller, Hydrofoils und Leichtbau&shy;strukturen. Berechnet und optimiert.</span>
-          <span data-l="en">Propellers, hydrofoils and lightweight structures. Analyzed and optimized.</span>
-        </h1>
-        <p class="lead" data-l="de">Ich lege strömungsführende Bauteile aus und optimiere sie: parametrische Geometrie, Strömungsberechnung und gezielte Variantenstudien. Aus eigener Erfahrung im Faserverbundbau weiß ich, was sich fertigen lässt, und übernehme auf Wunsch auch den Bau.</p>
-        <p class="lead" data-l="en">I design and optimize flow-critical components: parametric geometry, flow analysis and targeted variant studies. Hands-on composite experience means I know what can be manufactured, and on request I build it too.</p>
-        <div class="actions">
-          <a class="btn" href="kontakt.html"><span data-l="de">Projekt anfragen</span><span data-l="en">Start a project</span> <span class="arr" aria-hidden="true">→</span></a>
-          <a class="btn ghost" href="referenzen.html"><span data-l="de">Referenz ansehen</span><span data-l="en">See reference</span></a>
-        </div>
-      </div>
+</h1>
+<p class="lead">Ich lege strömungsführende Bauteile aus und optimiere sie: parametrische Geometrie, Strömungsberechnung und gezielte Variantenstudien. Aus eigener Erfahrung im Faserverbundbau weiß ich, was sich fertigen lässt, und übernehme auf Wunsch auch den Bau.</p>
 
-      <figure class="plate hero-cfd">
-        <!-- hebt nur die Transparenz des Videos an: überall mindestens so deckend wie das Wasser in der Bildmitte -->
-        <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-          <filter id="wasser" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB">
-            <feComponentTransfer><feFuncA type="table" tableValues="0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.280 0.290 0.300 0.310 0.320 0.330 0.340 0.350 0.360 0.370 0.380 0.390 0.400 0.410 0.420 0.430 0.440 0.450 0.460 0.470 0.480 0.490 0.500 0.510 0.520 0.530 0.540 0.550 0.560 0.570 0.580 0.590 0.600 0.610 0.620 0.630 0.640 0.650 0.660 0.670 0.680 0.690 0.700 0.710 0.720 0.730 0.740 0.750 0.760 0.770 0.780 0.790 0.800 0.810 0.820 0.830 0.840 0.850 0.860 0.870 0.880 0.890 0.900 0.910 0.920 0.930 0.940 0.950 0.960 0.970 0.980 0.990 1.000"/></feComponentTransfer>
-          </filter>
-        </svg>
-        <div id="foil-anim" class="foil-anim" role="img" aria-label="Animierte Strömungssimulation eines Hydrofoils im unregelmäßigen Seegang mit schwankendem Druckfeld">
-          <picture>
-            <source srcset="media/foil-seegang-dark-poster.webp" media="(prefers-color-scheme: dark)">
-            <img src="media/foil-seegang-light-poster.webp" alt="" width="1600" height="960" fetchpriority="high">
-          </picture>
-        </div>
-        <figcaption>
-          <b><span data-l="de">Ventilationsstudie: Hydrofoil im unregelmäßigen Seegang (CFD)</span><span data-l="en">Ventilation study: hydrofoil in irregular waves (CFD)</span></b>
-          <span class="legend"><span data-l="de">Druck:</span><span data-l="en">Pressure:</span><span><i class="low" aria-hidden="true"></i><span data-l="de">niedriger</span><span data-l="en">lower</span></span><span><i class="high" aria-hidden="true"></i><span data-l="de">höher</span><span data-l="en">higher</span></span></span>
-        </figcaption>
-      </figure>
-    </section>
+<div class="actions">
+<a class="btn" href="kontakt.html"><span>Projekt anfragen</span> <span aria-hidden="true" class="arr">→</span></a>
+<a class="btn ghost" href="referenzen.html"><span>Referenz ansehen</span></a>
+</div>
+</div>
+<figure class="plate hero-cfd">
+<!-- hebt nur die Transparenz des Videos an: überall mindestens so deckend wie das Wasser in der Bildmitte -->
+<svg aria-hidden="true" focusable="false" height="0" style="position:absolute" width="0">
+<filter color-interpolation-filters="sRGB" height="1" id="wasser" width="1" x="0" y="0">
+<fecomponenttransfer><fefunca tablevalues="0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.271 0.280 0.290 0.300 0.310 0.320 0.330 0.340 0.350 0.360 0.370 0.380 0.390 0.400 0.410 0.420 0.430 0.440 0.450 0.460 0.470 0.480 0.490 0.500 0.510 0.520 0.530 0.540 0.550 0.560 0.570 0.580 0.590 0.600 0.610 0.620 0.630 0.640 0.650 0.660 0.670 0.680 0.690 0.700 0.710 0.720 0.730 0.740 0.750 0.760 0.770 0.780 0.790 0.800 0.810 0.820 0.830 0.840 0.850 0.860 0.870 0.880 0.890 0.900 0.910 0.920 0.930 0.940 0.950 0.960 0.970 0.980 0.990 1.000" type="table"></fefunca></fecomponenttransfer>
+</filter>
+</svg>
+<div aria-label="Animierte Strömungssimulation eines Hydrofoils im unregelmäßigen Seegang mit schwankendem Druckfeld" class="foil-anim" id="foil-anim" role="img">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="/media/foil-seegang-dark-poster.webp"/>
+<img alt="" fetchpriority="high" height="960" src="/media/foil-seegang-light-poster.webp" width="1600"/>
+</picture>
+</div>
+<figcaption>
+<b><span>Ventilationsstudie: Hydrofoil im unregelmäßigen Seegang (CFD)</span></b>
+<span class="legend"><span>Druck:</span><span><i aria-hidden="true" class="low"></i><span>niedriger</span></span><span><i aria-hidden="true" class="high"></i><span>höher</span></span></span>
+</figcaption>
+</figure>
+</section>
+<dl class="facts facts-3">
+<div><dt><span>Schwerpunkt</span></dt><dd><span>Aero- und Hydrodynamik</span></dd></div>
+<div><dt><span>Methoden</span></dt><dd>BEM · VLM · CFD</dd></div>
+<div><dt><span>Fertigung</span></dt><dd><span>Faserverbund, auf Wunsch</span></dd></div>
+</dl>
+<!-- 01 Leistungen -->
+<section class="sheet" id="leistungen">
+<div class="margin"><p class="tag"><span class="n">01</span><span>Leistungen</span></p></div>
+<div>
+<h2><span>Angebot</span></h2>
+<p class="lead" style="margin-top:16px">Der Schwerpunkt liegt auf Berechnung und Optimierung. Die Werkzeuge wähle ich passend zur Aufgabe. Die Leistungen sind einzeln oder kombiniert buchbar.</p>
 
-    <dl class="facts facts-3">
-      <div><dt><span data-l="de">Schwerpunkt</span><span data-l="en">Focus</span></dt><dd><span data-l="de">Aero- und Hydrodynamik</span><span data-l="en">Aero- and hydrodynamics</span></dd></div>
-      <div><dt><span data-l="de">Methoden</span><span data-l="en">Methods</span></dt><dd>BEM · VLM · CFD</dd></div>
-      <div><dt><span data-l="de">Fertigung</span><span data-l="en">Manufacturing</span></dt><dd><span data-l="de">Faserverbund, auf Wunsch</span><span data-l="en">Composites, on request</span></dd></div>
-    </dl>
+<div class="offers">
+<article class="offer">
+<span class="idx">1.1</span>
+<div>
+<h3><span>Propeller-Auslegung</span></h3>
+<p>Propeller für Flugzeuge, Drohnen und Boote, ausgelegt auf Ihren Betriebspunkt: Blattelementtheorie für den Entwurf, parametrische Optimierung von Sehne und Verwindung, Nachrechnung in der CFD.</p>
 
-    <!-- 01 Leistungen -->
-    <section class="sheet" id="leistungen">
-      <div class="margin"><p class="tag"><span class="n">01</span><span data-l="de">Leistungen</span><span data-l="en">Services</span></p></div>
-      <div>
-        <h2><span data-l="de">Angebot</span><span data-l="en">What I offer</span></h2>
-        <p class="lead" style="margin-top:16px" data-l="de">Der Schwerpunkt liegt auf Berechnung und Optimierung. Die Werkzeuge wähle ich passend zur Aufgabe. Die Leistungen sind einzeln oder kombiniert buchbar.</p>
-        <p class="lead" style="margin-top:16px" data-l="en">The focus is on analysis and optimization. Tools are chosen to suit the task. Services can be booked individually or combined.</p>
-        <div class="offers">
-          <article class="offer">
-            <span class="idx">1.1</span>
-            <div>
-              <h3><span data-l="de">Propeller-Auslegung</span><span data-l="en">Propeller design</span></h3>
-              <p data-l="de">Propeller für Flugzeuge, Drohnen und Boote, ausgelegt auf Ihren Betriebspunkt: Blattelementtheorie für den Entwurf, parametrische Optimierung von Sehne und Verwindung, Nachrechnung in der CFD.</p>
-              <p data-l="en">Propellers for aircraft, drones and boats, designed for your operating point: blade element theory for the layout, parametric optimization of chord and twist, verification in CFD.</p>
-            </div>
-            <aside class="datasheet mini">
-              <h4><span data-l="de">Sie erhalten</span><span data-l="en">You get</span></h4>
-              <dl>
-                <div><dt><span data-l="de">Geometrie</span><span data-l="en">Geometry</span></dt><dd><span data-l="de">CAD-Daten</span><span data-l="en">CAD data</span></dd></div>
-                <div><dt><span data-l="de">Kennfeld</span><span data-l="en">Map</span></dt><dd><span data-l="de">Schub, Leistung, Wirkungsgrad</span><span data-l="en">Thrust, power, efficiency</span></dd></div>
-                <div><dt><span data-l="de">Doku</span><span data-l="en">Docs</span></dt><dd><span data-l="de">Auslegungsbericht</span><span data-l="en">Design report</span></dd></div>
-                <div><dt><span data-l="de">Methode</span><span data-l="en">Method</span></dt><dd><span data-l="de">BEM · CFD</span><span data-l="en">BEM · CFD</span></dd></div>
-              </dl>
-            </aside>
-          </article>
-          <article class="offer">
-            <span class="idx">1.2</span>
-            <div>
-              <h3><span data-l="de">Hydrofoil- und Finnenauslegung</span><span data-l="en">Hydrofoil and fin design</span></h3>
-              <p data-l="de">Foils, Finnen und Ruder für Wassersport und maritime Anwendungen. Ziel ist wenig Widerstand im Auslegungspunkt und stabiles Verhalten über den gesamten Geschwindigkeitsbereich.</p>
-              <p data-l="en">Foils, fins and rudders for water sports and marine applications. The goal is low drag at the design point and stable behavior across the whole speed range.</p>
-            </div>
-            <aside class="datasheet mini">
-              <h4><span data-l="de">Sie erhalten</span><span data-l="en">You get</span></h4>
-              <dl>
-                <div><dt><span data-l="de">Geometrie</span><span data-l="en">Geometry</span></dt><dd><span data-l="de">Profil und Grundriss</span><span data-l="en">Section and planform</span></dd></div>
-                <div><dt><span data-l="de">Daten</span><span data-l="en">Data</span></dt><dd><span data-l="de">Auftrieb und Widerstand</span><span data-l="en">Lift and drag</span></dd></div>
-                <div><dt><span data-l="de">Fertigung</span><span data-l="en">Production</span></dt><dd><span data-l="de">CAD-Daten</span><span data-l="en">CAD data</span></dd></div>
-                <div><dt><span data-l="de">Methode</span><span data-l="en">Method</span></dt><dd><span data-l="de">VLM · CFD</span><span data-l="en">VLM · CFD</span></dd></div>
-              </dl>
-            </aside>
-          </article>
-          <article class="offer">
-            <span class="idx">1.3</span>
-            <div>
-              <h3><span data-l="de">CFD-Studien und Optimierung</span><span data-l="en">CFD studies and optimization</span></h3>
-              <p data-l="de">Strömungssimulation für bestehende oder geplante Bauteile: Kräfte, Verluste und Strömungsbild verstehen, Varianten vergleichen, gezielt verbessern. Schnelle Modelle für die Breite, hochaufgelöste CFD für die Tiefe.</p>
-              <p data-l="en">Flow simulation for existing or planned parts: understand forces, losses and flow patterns, compare variants, improve in a targeted way. Fast models for breadth, high-resolution CFD for depth.</p>
-            </div>
-            <aside class="datasheet mini">
-              <h4><span data-l="de">Sie erhalten</span><span data-l="en">You get</span></h4>
-              <dl>
-                <div><dt><span data-l="de">Ergebnis</span><span data-l="en">Output</span></dt><dd><span data-l="de">Kräfte und Beiwerte</span><span data-l="en">Forces and coefficients</span></dd></div>
-                <div><dt><span data-l="de">Vergleich</span><span data-l="en">Compare</span></dt><dd><span data-l="de">Varianten nebeneinander</span><span data-l="en">Variants side by side</span></dd></div>
-                <div><dt><span data-l="de">Doku</span><span data-l="en">Docs</span></dt><dd><span data-l="de">Bericht mit Empfehlungen</span><span data-l="en">Report with recommendations</span></dd></div>
-                <div><dt><span data-l="de">Methode</span><span data-l="en">Method</span></dt><dd><span data-l="de">CFD · Parameterstudien</span><span data-l="en">CFD · parameter studies</span></dd></div>
-              </dl>
-            </aside>
-          </article>
-          <article class="offer">
-            <span class="idx">1.4</span>
-            <div>
-              <h3><span data-l="de">3D-Scan und Reverse Engineering</span><span data-l="en">3D scanning and reverse engineering</span></h3>
-              <p data-l="de">Bestehende Bauteile werden gescannt und als CAD-Modell nachgebildet. So lassen sich Abweichungen und Schwachstellen erkennen, Ersatzteile nachbauen oder bewährte Designs gezielt weiterentwickeln.</p>
-              <p data-l="en">Existing parts are scanned and rebuilt as CAD models, revealing deviations and weak points, enabling replacement parts or targeted development of proven designs.</p>
-            </div>
-            <aside class="datasheet mini">
-              <h4><span data-l="de">Sie erhalten</span><span data-l="en">You get</span></h4>
-              <dl>
-                <div><dt><span data-l="de">Modell</span><span data-l="en">Model</span></dt><dd><span data-l="de">CAD aus dem Scan</span><span data-l="en">CAD from scan</span></dd></div>
-                <div><dt><span data-l="de">Prüfung</span><span data-l="en">Check</span></dt><dd><span data-l="de">Soll-Ist-Vergleich</span><span data-l="en">Nominal vs. actual</span></dd></div>
-                <div><dt><span data-l="de">Ausblick</span><span data-l="en">Next</span></dt><dd><span data-l="de">Verbesserungsvorschläge</span><span data-l="en">Suggested improvements</span></dd></div>
-              </dl>
-            </aside>
-          </article>
-        </div>
-        <div class="buildnote">
-          <p class="tag"><span data-l="de">Auf Wunsch</span><span data-l="en">On request</span></p>
-          <p data-l="de"><strong>Bau von Prototypen und Einzelteilen.</strong> Ich habe Erfahrung im Faserverbundbau, zuletzt mit dem Propeller der Libelle. Wenn es sich anbietet, fertige ich Prototypen selbst oder begleite die Fertigung bei Ihrem Partner.</p>
-          <p data-l="en"><strong>Building prototypes and one-off parts.</strong> I have hands-on composite experience, most recently with the Libelle propeller. Where it makes sense, I build prototypes myself or support manufacturing at your partner.</p>
-        </div>
-        <div class="actions"><a class="btn" href="kontakt.html"><span data-l="de">Leistung anfragen</span><span data-l="en">Request a service</span> <span class="arr" aria-hidden="true">→</span></a></div>
-      </div>
-    </section>
+</div>
+<aside class="datasheet mini">
+<h4><span>Sie erhalten</span></h4>
+<dl>
+<div><dt><span>Geometrie</span></dt><dd><span>CAD-Daten</span></dd></div>
+<div><dt><span>Kennfeld</span></dt><dd><span>Schub, Leistung, Wirkungsgrad</span></dd></div>
+<div><dt><span>Doku</span></dt><dd><span>Auslegungsbericht</span></dd></div>
+<div><dt><span>Methode</span></dt><dd><span>BEM · CFD</span></dd></div>
+</dl>
+</aside>
+</article>
+<article class="offer">
+<span class="idx">1.2</span>
+<div>
+<h3><span>Hydrofoil- und Finnenauslegung</span></h3>
+<p>Foils, Finnen und Ruder für Wassersport und maritime Anwendungen. Ziel ist wenig Widerstand im Auslegungspunkt und stabiles Verhalten über den gesamten Geschwindigkeitsbereich.</p>
 
-    <!-- 02 Arbeitsweise -->
-    <section class="sheet" id="arbeitsweise">
-      <div class="margin"><p class="tag"><span class="n">02</span><span data-l="de">Arbeitsweise</span><span data-l="en">Process</span></p></div>
-      <div>
-        <h2><span data-l="de">Vom groben Entwurf zur fertigungsreifen Geometrie</span><span data-l="en">From rough concept to production-ready geometry</span></h2>
-        <ol class="steps">
-          <li>
-            <h3><span data-l="de">Aufgabe klären</span><span data-l="en">Define the task</span></h3>
-            <p data-l="de">Betriebspunkte, Bauraum, Gewicht, Budget. Was muss das Teil können, und woran messen wir es?</p>
-            <p data-l="en">Operating points, envelope, weight, budget. What does the part have to do, and how do we measure success?</p>
-          </li>
-          <li>
-            <h3><span data-l="de">Schnell abschätzen</span><span data-l="en">Estimate fast</span></h3>
-            <p data-l="de">Mit einfachen Modellen wird der Entwurfsraum abgesteckt, bevor teure Rechenzeit fließt.</p>
-            <p data-l="en">Simple models map out the design space before expensive compute time is spent.</p>
-            <span class="mono">BEM · VLM</span>
-          </li>
-          <li>
-            <h3><span data-l="de">Parametrisch optimieren</span><span data-l="en">Optimize parametrically</span></h3>
-            <p data-l="de">Ein parametrisches Modell erlaubt systematische Varianten; die CFD bestätigt die besten.</p>
-            <p data-l="en">A parametric model allows systematic variants; CFD confirms the best ones.</p>
-            <span class="mono"><span data-l="de">Parameterstudien · CFD</span><span data-l="en">Parameter studies · CFD</span></span>
-          </li>
-          <li>
-            <h3><span data-l="de">Übergeben</span><span data-l="en">Hand over</span></h3>
-            <p data-l="de">Fertigungsreife Daten und ein nachvollziehbarer Bericht. Auf Wunsch Begleitung der Fertigung oder Bau eines Prototyps.</p>
-            <p data-l="en">Production-ready data and a clear report. On request, support during manufacturing or a prototype build.</p>
-            <span class="mono"><span data-l="de">CAD · Bericht</span><span data-l="en">CAD · report</span></span>
-          </li>
-        </ol>
-      </div>
-    </section>
+</div>
+<aside class="datasheet mini">
+<h4><span>Sie erhalten</span></h4>
+<dl>
+<div><dt><span>Geometrie</span></dt><dd><span>Profil und Grundriss</span></dd></div>
+<div><dt><span>Daten</span></dt><dd><span>Auftrieb und Widerstand</span></dd></div>
+<div><dt><span>Fertigung</span></dt><dd><span>CAD-Daten</span></dd></div>
+<div><dt><span>Methode</span></dt><dd><span>VLM · CFD</span></dd></div>
+</dl>
+</aside>
+</article>
+<article class="offer">
+<span class="idx">1.3</span>
+<div>
+<h3><span>CFD-Studien und Optimierung</span></h3>
+<p>Strömungssimulation für bestehende oder geplante Bauteile: Kräfte, Verluste und Strömungsbild verstehen, Varianten vergleichen, gezielt verbessern. Schnelle Modelle für die Breite, hochaufgelöste CFD für die Tiefe.</p>
 
-    <!-- 03 Referenz -->
-    <section class="sheet" id="referenz">
-      <div class="margin"><p class="tag"><span class="n">03</span><span data-l="de">Referenz</span><span data-l="en">Reference</span></p></div>
-      <div>
+</div>
+<aside class="datasheet mini">
+<h4><span>Sie erhalten</span></h4>
+<dl>
+<div><dt><span>Ergebnis</span></dt><dd><span>Kräfte und Beiwerte</span></dd></div>
+<div><dt><span>Vergleich</span></dt><dd><span>Varianten nebeneinander</span></dd></div>
+<div><dt><span>Doku</span></dt><dd><span>Bericht mit Empfehlungen</span></dd></div>
+<div><dt><span>Methode</span></dt><dd><span>CFD · Parameterstudien</span></dd></div>
+</dl>
+</aside>
+</article>
+<article class="offer">
+<span class="idx">1.4</span>
+<div>
+<h3><span>3D-Scan und Reverse Engineering</span></h3>
+<p>Bestehende Bauteile werden gescannt und als CAD-Modell nachgebildet. So lassen sich Abweichungen und Schwachstellen erkennen, Ersatzteile nachbauen oder bewährte Designs gezielt weiterentwickeln.</p>
 
-        <figure class="plate">
-          <img src="images/work/odonata-flug.jpg" alt="Das muskelkraftbetriebene Flugzeug Libelle im Flug über der Startbahn" loading="lazy" width="1600" height="599">
-          <figcaption><span><span data-l="de">Libelle im Flug</span><span data-l="en">Libelle in flight</span></span><span><span data-l="de">Propeller ⌀ 3,5 m</span><span data-l="en">Propeller ⌀ 3.5 m</span></span></figcaption>
-        </figure>
-        <div class="teaser" style="margin-top:32px">
-          <div>
-            <h2><span data-l="de">Ein Propeller für den Langstrecken-Weltrekord mit Muskelkraft</span><span data-l="en">A propeller for a human-powered distance record</span></h2>
-            <p data-l="de">Für das Human Powered Aircraft Libelle des Vereins Odonata e.V. habe ich als Leiter der Baugruppe Propeller einen Propeller mit 3,5 m Durchmesser und 800 g Masse entwickelt und gebaut. Jedes Watt, das der Pilot tritt, muss möglichst verlustfrei in Schub umgesetzt werden.</p>
-            <p data-l="en">For the human-powered aircraft Libelle of the association Odonata e.V., I designed and built a propeller with a 3.5 m diameter and a mass of 800 g as head of the propeller group. Every watt the pilot pedals has to be turned into thrust with as little loss as possible.</p>
-            <p style="margin-top:20px"><a class="textlink" href="referenzen.html"><span data-l="de">Zum Projekt</span><span data-l="en">View project</span> →</a></p>
-          </div>
-          <dl class="facts facts-2">
-            <div><dt><span data-l="de">Durchmesser</span><span data-l="en">Diameter</span></dt><dd><span data-l="de">3,5 m</span><span data-l="en">3.5 m</span></dd></div>
-            <div><dt><span data-l="de">Masse</span><span data-l="en">Mass</span></dt><dd>800 g</dd></div>
-            <div><dt><span data-l="de">Auslegung</span><span data-l="en">Design</span></dt><dd><span data-l="de">BEM, parametrisch</span><span data-l="en">BEM, parametric</span></dd></div>
-            <div><dt><span data-l="de">Fertigung</span><span data-l="en">Build</span></dt><dd><span data-l="de">CFK, Handlaminat</span><span data-l="en">CFRP, hand layup</span></dd></div>
-          </dl>
-        </div>
-      </div>
-    </section>
+</div>
+<aside class="datasheet mini">
+<h4><span>Sie erhalten</span></h4>
+<dl>
+<div><dt><span>Modell</span></dt><dd><span>CAD aus dem Scan</span></dd></div>
+<div><dt><span>Prüfung</span></dt><dd><span>Soll-Ist-Vergleich</span></dd></div>
+<div><dt><span>Ausblick</span></dt><dd><span>Verbesserungsvorschläge</span></dd></div>
+</dl>
+</aside>
+</article>
+</div>
+<div class="buildnote">
+<p class="tag"><span>Auf Wunsch</span></p>
+<p><strong>Bau von Prototypen und Einzelteilen.</strong> Ich habe Erfahrung im Faserverbundbau, zuletzt mit dem Propeller der Libelle. Wenn es sich anbietet, fertige ich Prototypen selbst oder begleite die Fertigung bei Ihrem Partner.</p>
 
+</div>
+<div class="actions"><a class="btn" href="kontakt.html"><span>Leistung anfragen</span> <span aria-hidden="true" class="arr">→</span></a></div>
+</div>
+</section>
+<!-- 02 Arbeitsweise -->
+<section class="sheet" id="arbeitsweise">
+<div class="margin"><p class="tag"><span class="n">02</span><span>Arbeitsweise</span></p></div>
+<div>
+<h2><span>Vom groben Entwurf zur fertigungsreifen Geometrie</span></h2>
+<ol class="steps">
+<li>
+<h3><span>Aufgabe klären</span></h3>
+<p>Betriebspunkte, Bauraum, Gewicht, Budget. Was muss das Teil können, und woran messen wir es?</p>
 
-  </div>
+</li>
+<li>
+<h3><span>Schnell abschätzen</span></h3>
+<p>Mit einfachen Modellen wird der Entwurfsraum abgesteckt, bevor teure Rechenzeit fließt.</p>
 
-  <section class="closing">
-    <div class="wrap">
-      <div>
-        <h2><span data-l="de">Sie haben ein Strömungs- oder Leichtbauproblem?</span><span data-l="en">Got a flow or lightweight problem?</span></h2>
-        <p data-l="de">Eine kurze Beschreibung reicht für eine erste Einschätzung.</p>
-        <p data-l="en">A short description is enough for a first assessment.</p>
-      </div>
-      <a class="btn" href="kontakt.html"><span data-l="de">Anfrage stellen</span><span data-l="en">Get in touch</span> <span class="arr" aria-hidden="true">→</span></a>
-    </div>
-  </section>
+<span class="mono">BEM · VLM</span>
+</li>
+<li>
+<h3><span>Parametrisch optimieren</span></h3>
+<p>Ein parametrisches Modell erlaubt systematische Varianten; die CFD bestätigt die besten.</p>
+
+<span class="mono"><span>Parameterstudien · CFD</span></span>
+</li>
+<li>
+<h3><span>Übergeben</span></h3>
+<p>Fertigungsreife Daten und ein nachvollziehbarer Bericht. Auf Wunsch Begleitung der Fertigung oder Bau eines Prototyps.</p>
+
+<span class="mono"><span>CAD · Bericht</span></span>
+</li>
+</ol>
+</div>
+</section>
+<!-- 03 Referenz -->
+<section class="sheet" id="referenz">
+<div class="margin"><p class="tag"><span class="n">03</span><span>Referenz</span></p></div>
+<div>
+<figure class="plate">
+<img alt="Das muskelkraftbetriebene Flugzeug Libelle im Flug über der Startbahn" height="599" loading="lazy" src="/images/work/odonata-flug.jpg" width="1600"/>
+<figcaption><span><span>Libelle im Flug</span></span><span><span>Propeller ⌀ 3,5 m</span></span></figcaption>
+</figure>
+<div class="teaser" style="margin-top:32px">
+<div>
+<h2><span>Ein Propeller für den Langstrecken-Weltrekord mit Muskelkraft</span></h2>
+<p>Für das Human Powered Aircraft Libelle des Vereins Odonata e.V. habe ich als Leiter der Baugruppe Propeller einen Propeller mit 3,5 m Durchmesser und 800 g Masse entwickelt und gebaut. Jedes Watt, das der Pilot tritt, muss möglichst verlustfrei in Schub umgesetzt werden.</p>
+
+<p style="margin-top:20px"><a class="textlink" href="referenzen.html"><span>Zum Projekt</span> →</a></p>
+</div>
+<dl class="facts facts-2">
+<div><dt><span>Durchmesser</span></dt><dd><span>3,5 m</span></dd></div>
+<div><dt><span>Masse</span></dt><dd>800 g</dd></div>
+<div><dt><span>Auslegung</span></dt><dd><span>BEM, parametrisch</span></dd></div>
+<div><dt><span>Fertigung</span></dt><dd><span>CFK, Handlaminat</span></dd></div>
+</dl>
+</div>
+</div>
+</section>
+</div>
+<section class="closing">
+<div class="wrap">
+<div>
+<h2><span>Sie haben ein Strömungs- oder Leichtbauproblem?</span></h2>
+<p>Eine kurze Beschreibung reicht für eine erste Einschätzung.</p>
+
+</div>
+<a class="btn" href="kontakt.html"><span>Anfrage stellen</span> <span aria-hidden="true" class="arr">→</span></a>
+</div>
+</section>
 </main>
-
 <footer class="titleblock">
-  <div class="wrap">
-    <div class="tb">
-      <div class="big">
-        <span class="name">coastl</span>
-        <span><span class="k"><span data-l="de">Inhaber</span><span data-l="en">Owner</span></span><span class="v">Winny Hohensee, B.Eng.</span></span>
-      </div>
-      <div><span class="k"><span data-l="de">Kontakt</span><span data-l="en">Contact</span></span><a href="mailto:hohensee@coastl.de">hohensee@coastl.de</a></div>
-      <div><span class="k"><span data-l="de">Blatt</span><span data-l="en">Sheet</span></span><span class="v"><span data-l="de">Leistungen</span><span data-l="en">Services</span></span></div>
-      <div><span class="k"><span data-l="de">Stand</span><span data-l="en">Rev.</span></span><span class="v">© 2026</span></div>
-      <div><span class="k"><span data-l="de">Rechtliches</span><span data-l="en">Legal</span></span><a href="impressum.html"><span data-l="de">Impressum</span><span data-l="en">Legal notice</span></a></div>
-      <div><span class="k">&nbsp;</span><a href="datenschutz.html"><span data-l="de">Datenschutz</span><span data-l="en">Privacy</span></a></div>
-      <div><span class="k"><span data-l="de">Profil</span><span data-l="en">Profile</span></span><a href="https://www.linkedin.com/in/winny-hohensee-b015a3213/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="tb">
+<div class="big">
+<span class="name">coastl</span>
+<span><span class="k"><span>Inhaber</span></span><span class="v">Winny Hohensee, B.Eng.</span></span>
+</div>
+<div><span class="k"><span>Kontakt</span></span><a href="mailto:hohensee@coastl.de">hohensee@coastl.de</a></div>
+<div><span class="k"><span>Blatt</span></span><span class="v"><span>Leistungen</span></span></div>
+<div><span class="k"><span>Stand</span></span><span class="v">© 2026</span></div>
+<div><span class="k"><span>Rechtliches</span></span><a href="impressum.html"><span>Impressum</span></a></div>
+<div><span class="k"> </span><a href="datenschutz.html"><span>Datenschutz</span></a></div>
+<div><span class="k"><span>Profil</span></span><a href="https://www.linkedin.com/in/winny-hohensee-b015a3213/" rel="noopener" target="_blank">LinkedIn ↗</a></div>
+</div>
+</div>
 </footer>
-
-<script src="script.js?v=2"></script>
-<script src="foil-video.js?v=4"></script>
+<script src="/script.js?v=6"></script>
+<script src="/foil-video.js?v=6"></script>
 </body>
 </html>

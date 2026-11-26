@@ -229,9 +229,9 @@ p { margin: 0 0 1em; max-width: 68ch; color: var(--ink-2); }
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
   gap: 56px; align-items: center;
-  padding: 72px 0 64px;
+  padding: 64px 0;
 }
-@media (max-width: 980px) { .intro { grid-template-columns: 1fr; gap: 40px; padding: 48px 0; } }
+@media (max-width: 980px) { .intro { grid-template-columns: 1fr; gap: 40px; padding: 64px 0 48px; } }
 .intro h1 { margin-bottom: 26px; }
 
 .intro .hero-photo img { aspect-ratio: 3 / 2; max-height: 400px; object-position: 64% 50%; }
@@ -287,14 +287,13 @@ p { margin: 0 0 1em; max-width: 68ch; color: var(--ink-2); }
 .datasheet.cv dd b { color: var(--ink); font-weight: 600; }
 @media (max-width: 560px) { .datasheet.cv dl > div { grid-template-columns: 1fr; } .datasheet.cv dt { border-right: 0; padding-bottom: 0; } }
 
-.foil-anim { aspect-ratio: 5 / 3; }
+/* Rechteckiger Ausschnitt aus dem 5:3-Video: x 12–88 %, y 8,5–85,5 % */
+.foil-anim { position: relative; overflow: hidden; aspect-ratio: 912 / 554.4; }
 .foil-anim picture { display: contents; }
-.foil-anim.opaque { -webkit-mask-image: radial-gradient(ellipse closest-side, #000 72%, transparent 100%); mask-image: radial-gradient(ellipse closest-side, #000 72%, transparent 100%); }
-/* Die dunkle Fassung hat einen eigenen, fast identischen Grund: Ränder weich ausblenden */
-@media (prefers-color-scheme: dark) {
-  .foil-anim { -webkit-mask-image: radial-gradient(ellipse closest-side, #000 72%, transparent 100%); mask-image: radial-gradient(ellipse closest-side, #000 72%, transparent 100%); }
+.intro .hero-cfd .foil-anim img, .intro .hero-cfd .foil-anim video {
+  position: absolute; display: block; left: -15.789%; top: -11.039%;
+  width: 131.579%; max-width: none; height: auto; max-height: none; aspect-ratio: 5 / 3; object-fit: contain;
 }
-.intro .hero-cfd .foil-anim img, .foil-anim video { display: block; width: 100%; height: 100%; max-height: none; aspect-ratio: auto; object-fit: contain; }
 .plate.hero-cfd figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 18px; font-size: 13px; color: var(--muted); }
 .hero-cfd figcaption b { color: var(--ink); font-weight: 600; }
 .hero-cfd .legend { display: flex; align-items: center; gap: 12px; }

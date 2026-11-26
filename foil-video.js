@@ -1,21 +1,25 @@
-// Seegang-Video auf der Startseite: je eine Schleife für hellen und dunklen Grund.
+// Seegang-Video auf der Startseite, als Rechteck beschnitten (Ausschnitt siehe style.css).
 // Ohne Skript bzw. bei "Bewegung reduzieren" bleibt das Standbild aus dem HTML stehen.
 (function () {
   const box = document.getElementById("foil-anim");
   if (!box) return;
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-  // Safari und alle iOS-Browser zeigen WebM ohne Transparenz: dort MP4 (deckend, Ränder per CSS
-  // ausgeblendet). Animiertes WebP nur als Notlösung, etwa im Stromsparmodus (kein Autoplay).
+  // Chrome, Edge, Firefox: transparentes WebM (helle Fassung, passt auf beide Gründe). Die ovale
+  // Ausblendung steckt in dessen Transparenz; der SVG-Filter #wasser in index.html hebt sie auf.
+  // Safari und alle iOS-Browser zeigen WebM ohne Transparenz: dort MP4 (deckend, je Farbschema).
+  // Animiertes WebP nur als Notlösung, etwa im Stromsparmodus (kein Autoplay).
   const webkit = /^Apple/.test(navigator.vendor || "");
+  const alpha = !webkit && !!document.createElement("video").canPlayType('video/webm; codecs="vp9"');
   let visible = true;
   const SPEED = 2 / 3;   // um ein Drittel verlangsamt (animiertes WebP ist entsprechend angepasst)
   const dark = window.matchMedia("(prefers-color-scheme: dark)");
-  const file = (suffix) => "media/foil-seegang-" + (dark.matches ? "dark" : "light") + suffix;
+  const file = (suffix, theme) => "media/foil-seegang-" + (theme || (dark.matches ? "dark" : "light")) + suffix;
+  // Standbild: mit Transparenz immer die helle Fassung, sonst passend zum Farbschema
+  const poster = () => file("-poster.webp", alpha ? "light" : "");
 
-  function image(suffix) {
-    box.classList.remove("opaque");
+  function image(src) {
     const img = document.createElement("img");
-    img.src = file(suffix);
+    img.src = src;
     img.alt = "";
     img.width = 1600;
     img.height = 960;
@@ -25,7 +29,7 @@
   function play(v) {
     if (!visible) { v.pause(); return; }
     const p = v.play();
-    if (p) p.catch((e) => { if (e.name === "NotAllowedError" || e.name === "NotSupportedError") image("-anim.webp"); });
+    if (p) p.catch((e) => { if (e.name === "NotAllowedError" || e.name === "NotSupportedError") image(file("-anim.webp")); });
   }
 
   function video(ext) {
@@ -37,21 +41,20 @@
     v.defaultPlaybackRate = v.playbackRate = SPEED;
     v.width = 1600;
     v.height = 960;
-    v.poster = file("-poster.webp");
-    v.addEventListener("error", () => image("-anim.webp"));
+    v.poster = poster();
+    v.addEventListener("error", () => image(file("-anim.webp")));
     // Standbild erst entfernen, wenn das Video läuft (sonst doppelt, weil transparent)
     v.addEventListener("playing", () => { v.removeAttribute("poster"); }, { once: true });
-    box.classList.toggle("opaque", ext === ".mp4");
-    v.src = file(ext);
+    if (ext === ".webm") v.style.filter = "url(#wasser)";
+    v.src = file(ext, ext === ".webm" ? "light" : "");
     v.playbackRate = SPEED;
     box.replaceChildren(v);
     play(v);
   }
 
   function show() {
-    if (reduce.matches) image("-poster.webp");
-    else if (webkit || !document.createElement("video").canPlayType('video/webm; codecs="vp9"')) video(".mp4");
-    else video(".webm");
+    if (reduce.matches) image(poster());
+    else video(alpha ? ".webm" : ".mp4");
   }
 
   reduce.addEventListener("change", show);

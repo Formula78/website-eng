@@ -17,7 +17,7 @@ from bs4 import BeautifulSoup, Comment
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "_src"
 SITE = "https://coastl.de"
-VERSION = "6"  # bei Änderungen an CSS oder Skripten erhöhen
+VERSION = "7"  # bei Änderungen an CSS oder Skripten erhöhen
 LANGS = ("de", "en")
 OG_DEFAULT = "/images/og-coastl.jpg"
 LINKEDIN = "https://www.linkedin.com/in/winny-hohensee-b015a3213/"
@@ -36,10 +36,10 @@ NOINDEX = {"impressum", "datenschutz"}
 # Titel, Beschreibung, Bild für Suchmaschinen und geteilte Links
 META = {
     "index": {
-        "de": ("CFD, Propeller & Hydrofoils: Ingenieur in Kiel | coastl",
-               "Strömungsprobleme berechnen und optimieren: CFD-Simulation, Propeller- und Hydrofoil-Auslegung, 3D-Scan. Aus Kiel, für Privatkunden und Bootsbauer."),
-        "en": ("CFD, Propeller & Hydrofoil Design, Kiel | coastl",
-               "Solving flow problems: CFD simulation, propeller and hydrofoil design, 3D scanning. Engineering from Kiel, Germany, for private clients and boat builders."),
+        "de": ("Strömungsberechnung & CFD: Ingenieur in Kiel | coastl",
+               "Idee oder Strömungsproblem? Berechnung und Optimierung für Boote, Propeller, Foils und mehr. Erste Einschätzung kostenlos. Ingenieur aus Kiel."),
+        "en": ("Flow Simulation & CFD: Engineer in Kiel | coastl",
+               "Idea or flow problem? Analysis and optimization for boats, propellers, foils and more. Free first assessment. Engineering from Kiel, Germany."),
     },
     "referenzen": {
         "de": ("Referenz: 3,5-m-Propeller für Muskelkraftflugzeug | coastl",
@@ -56,9 +56,9 @@ META = {
     },
     "kontakt": {
         "de": ("Projekt anfragen: Strömung, Propeller, Foils | coastl",
-               "Sie haben eine Idee oder ein Strömungsproblem? Beschreiben Sie kurz Ihr Vorhaben. Ingenieurleistung aus Kiel für Privatkunden und Bootsbauer."),
+               "Beschreiben Sie kurz Ihr Vorhaben: erste Einschätzung kostenlos, Angebot zum Festpreis. Für Privatkunden und Bootsbauer, Ingenieur aus Kiel."),
         "en": ("Start a Project: Flow, Propellers, Foils | coastl",
-               "Have an idea or a flow problem? Briefly describe your project. Engineering services from Kiel, Germany, for private clients and boat builders."),
+               "Briefly describe your project: free first assessment, fixed-price quote. For private clients and boat builders, engineering from Kiel, Germany."),
     },
     "impressum": {"de": ("Impressum | coastl", ""), "en": ("Legal Notice | coastl", "")},
     "datenschutz": {"de": ("Datenschutzerklärung | coastl", ""), "en": ("Privacy Policy | coastl", "")},
@@ -93,14 +93,14 @@ def url(page, lang):
 def structured_data(lang):
     de = lang == "de"
     services = ([
+        ("Strömungsberechnung und Optimierung", "Strömungssimulation, Variantenvergleich und Optimierung."),
         ("Propeller-Auslegung", "Auslegung und Optimierung von Propellern mit Blattelementtheorie und CFD."),
         ("Hydrofoil- und Finnenauslegung", "Foils, Finnen und Ruder für Wassersport und maritime Anwendungen."),
-        ("CFD-Studien und Optimierung", "Strömungssimulation, Variantenvergleich und Optimierung."),
         ("3D-Scan und Reverse Engineering", "Bauteile scannen, als CAD-Modell nachbilden und verbessern."),
     ] if de else [
+        ("Flow simulation and optimization", "Flow simulation, comparison of variants and optimization."),
         ("Propeller design", "Design and optimization of propellers using blade element theory and CFD."),
         ("Hydrofoil and fin design", "Foils, fins and rudders for water sports and marine applications."),
-        ("CFD studies and optimization", "Flow simulation, comparison of variants and optimization."),
         ("3D scanning and reverse engineering", "Scanning parts, rebuilding them as CAD models and improving them."),
     ])
     return {"@context": "https://schema.org", "@graph": [
